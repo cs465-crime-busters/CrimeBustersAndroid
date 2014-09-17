@@ -16,54 +16,13 @@
         android:layout_height="50dp"
         android:editable="false"
         android:ems="10"
-<<<<<<< HEAD
-
-        android:text="lat"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/submitReport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/message"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:onClick="submitReport"
-        android:text="Submit Report"
-=======
         android:hint="@string/location_gps"
         android:text="Latitude"
         android:textColorHint="#200772"
->>>>>>> origin/iteration6
         android:textSize="24dp"
         android:textStyle="bold" />
 
     <EditText
-<<<<<<< HEAD
-        android:id="@+id/editText_currentTime"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignLeft="@+id/location"
-        android:layout_below="@+id/locationGPS_long"
-        android:editable="false"
-        android:ems="10"
-        android:hint="@string/time"
-        android:textColor="#A0522D"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/locationGPS_lat"
-        android:layout_below="@+id/editText_currentTime"
-        android:ems="10"
-        android:hint="@string/location_human"
-        android:inputType="textPostalAddress"
-        android:textColor="#FFFFFF"
-=======
         android:id="@+id/locationGPS_long"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -77,7 +36,7 @@
         android:textColorHint="#200772"
         android:textSize="24dp"
         android:textStyle="bold" />
-    
+
     <Button
         android:id="@+id/submitReport"
         android:layout_width="match_parent"
@@ -87,7 +46,6 @@
         android:layout_marginBottom="20dp"
         android:onClick="submitReport"
         android:text="@string/submit_report"
->>>>>>> origin/iteration6
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -101,10 +59,7 @@
         android:ems="10"
         android:hint="@string/desc"
         android:inputType="textMultiLine"
-<<<<<<< HEAD
-=======
         android:textColorHint="#200772"
->>>>>>> origin/iteration6
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -112,14 +67,6 @@
         android:id="@+id/editText_currentTime"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-<<<<<<< HEAD
-        android:layout_alignRight="@+id/location"
-        android:layout_alignTop="@+id/locationGPS_lat"
-        android:layout_marginRight="16dp"
-        android:editable="false"
-        android:ems="10"
-        android:hint="long"
-=======
         android:layout_above="@+id/location"
         android:layout_alignLeft="@+id/location"
         android:layout_marginBottom="16dp"
@@ -142,7 +89,6 @@
         android:inputType="textPostalAddress"
         android:textColor="#FFFFFF"
         android:textColorHint="#200772"
->>>>>>> origin/iteration6
         android:textSize="24dp"
         android:textStyle="bold" />
 
