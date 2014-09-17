@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.crime.crimebusters"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- android:name="MyApplication"> -->
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.MainFormActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.ReportIncidentActivity"
+            android:label="@string/title_activity_report_incident"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.HTTPSubmitReportActivity"
+            android:label="@string/title_activity_httpsubmit_report"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.HighPriorityIncidentActivity"
+            android:label="@string/title_activity_high_priority_incident"
+             android:screenOrientation="portrait" 
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crime.crimebusters.MainFormActivity" />
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.UpdateProfileActivity"
+            android:label="@string/title_activity_update_profile"
+             android:screenOrientation="portrait" 
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crime.crimebusters.MainFormActivity" />
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.RegisterUserActivity" 
+             android:screenOrientation="portrait" 
+            android:label="@string/title_activity_register_user" >
+           
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.MediaActivity"
+            android:label="@string/title_activity_media"
+            android:screenOrientation="portrait" 
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.ReportIncidentActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.illinoiscrimebusters.crimebusters" />
+        </activity>
+    </application>
+
+</manifest>

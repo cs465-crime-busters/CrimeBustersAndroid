@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".RegisterUserActivity" >
+
+    <EditText
+        android:id="@+id/updateProfile_firstName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#200772"
+        android:hint="@string/hint_firstName"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/updateProfile_lastName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_lastName"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:textColorHint="#200772"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/updateProfile_phoneNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_phoneNumber"
+        android:inputType="phone"
+        android:textSize="14sp"
+        android:textColorHint="#200772"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/updateProfile_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_address"
+        android:inputType="textPostalAddress"
+        android:textSize="14sp"
+        android:textColorHint="#200772"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/updateProfile_zipCode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_zipCode"
+        android:inputType="text"
+        android:textSize="14sp"
+        android:textColorHint="#200772"
+        android:textStyle="bold" />
+
+	<RadioGroup
+	    android:id="@+id/updateProfile_gender"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+    </RadioGroup>
+    
+    <Button
+        android:id="@+id/updateProfile_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="onUpdateProfile"
+        android:text="@string/updateUserButton"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/changeTheme_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:onClick="changeTheme"
+        android:tag="1"
+        android:text="@string/changeThemeButton"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerlanguage"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+     
+<!--      <EditText -->
+<!--         android:id="@+id/selLanguage" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="40dp" -->
+<!--         android:editable="false" -->
+<!--         android:textAlignment="4" -->
+<!--         android:layout_marginTop="5dp" -->
+<!--         android:textSize="14sp" -->
+<!--         android:textStyle="bold"/> -->
+    
+    <Button
+        android:id="@+id/changeLanguage_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:onClick="changeLanguage"
+        android:tag="1"
+        android:text="@string/changeLanguageButton"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    
+	<Button
+        android:id="@+id/updateProfile_logout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:onClick="onLogoutClick"
+        android:tag="1"
+        android:text="@string/logout"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</LinearLayout>

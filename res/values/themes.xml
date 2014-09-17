@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+ <style name="MyTheme" parent="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"> 
+  <item name="android:windowBackground">@drawable/c8</item>
+ </style>
+ 
+  <style name="MyTheme2" parent="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"> 
+  <item name="android:windowBackground">@drawable/b6</item>
+ </style>
+ 
+  <style name="MyTheme3" parent="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"> 
+  <item name="android:windowBackground">@drawable/orange</item>
+ </style>
+ 
+</resources>
