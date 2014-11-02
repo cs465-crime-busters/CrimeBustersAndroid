@@ -13,25 +13,30 @@
         android:id="@+id/createUser_userName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-		android:textColorHint="#200772"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
         android:hint="@string/hint_userName"
-        android:layout_marginTop="20dp"
         android:inputType="text"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textColorHint="#200772"
+        android:textSize="24sp"
+        android:textStyle="bold" >
+
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/createUser_password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
         android:hint="@string/hint_password"
-        android:textSize="24sp"
+        android:inputType="textPassword"
         android:textColorHint="#200772"
-        android:textStyle="bold"
-        android:inputType="textPassword" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/createUser_firstName"
@@ -48,7 +53,7 @@
         android:id="@+id/createUser_lastName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:hint="@string/hint_lastName"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -59,7 +64,7 @@
         android:id="@+id/createUser_email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="10dp"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColorHint="#200772"
@@ -71,10 +76,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="createUser"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textAlignment="4"
+        
         android:text="@string/createUserButton" />
 
 </LinearLayout>
