@@ -27,7 +27,7 @@ import org.apache.http.protocol.HTTP;
  * 
  * I am not sure if this is the best implementation but it is well written.
  * 
- * @author ababan2
+ * @author Chris
  * 
  */
 public class RestClient {
