@@ -69,8 +69,8 @@
     <string name="default_password">test123</string>
     <string name="welocme">bjɛ̃vəny vers Crimebusters!</string>
     <string name="update_profile">actualiser ta profil</string>
-    <string name="low_priority">apprendre à bas priorité Crime</string>
-    <string name="high_priority">apprendre à élevé priorité Crime</string>
+    <string name="low_priority">Rapport de non-urgence</string>
+    <string name="high_priority">rapport emergeny</string>
     <string name="default_latitude">Latitude</string>
     <string name="default_longitude">Longitude</string>
     <string name="take_photo">conduire photo</string>
@@ -100,4 +100,5 @@
 	<string name="pic3">Pic 3</string>
 	<string name="audiopath">Chemin de la audio</string>
 	<string name="videopath">Chemin de la vidéo</string>
+	<string name="edit_Profile">Editer le profil</string>
 </resources>

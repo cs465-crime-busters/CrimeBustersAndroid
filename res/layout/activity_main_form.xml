@@ -1,4 +1,4 @@
- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-	tools:context=".MainFormActivity" >
+    tools:context=".MainFormActivity" >
 
     <TextView
         android:id="@+id/main_activity_header"
@@ -14,76 +14,41 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/welcome"
-        android:textSize="24dp"
         android:textColor="#FFFFFF"
-        android:textStyle="bold" />
-    
-    <Button
-        android:id="@+id/settings"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/report_button"
-        android:layout_alignParentBottom="true"
-        android:layout_weight="1"
-        android:onClick="profile"
-        android:text="@string/update_profile"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/report_button"
+        android:id="@+id/report_nonEmergency"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/settings"
-        android:layout_marginBottom="60dp"
-        android:layout_toRightOf="@+id/imageView1"
+        android:layout_alignRight="@+id/main_activity_header"
+        android:layout_below="@+id/report_emergency"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
+        android:background="@drawable/yellow_button"
+        android:height="150dp"
         android:onClick="report"
         android:text="@string/low_priority"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="62dp"
-        android:layout_height="62dp"
-        android:layout_alignLeft="@+id/main_activity_header"
-        android:layout_alignTop="@+id/report_ongoing_incident"
-        android:layout_weight="1"
-        android:src="@drawable/hightry" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignTop="@+id/report_button"
-        android:layout_weight="1"
-        android:src="@drawable/lowtry" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignTop="@+id/settings"
-        android:layout_weight="1"
-        android:src="@drawable/profiletry" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:width="500dp" />
 
     <Button
-        android:id="@+id/report_ongoing_incident"
+        android:id="@+id/report_emergency"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/report_button"
-        android:layout_alignLeft="@+id/report_button"
-        android:layout_marginBottom="60dp"
+        android:layout_below="@+id/main_activity_header"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
+        android:background="@drawable/red_button"
+        android:height="150dp"
         android:onClick="incident"
         android:text="@string/high_priority"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:width="500dp" />
 
 </RelativeLayout>

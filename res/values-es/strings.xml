@@ -69,8 +69,8 @@
     <string name="default_password"></string>
     <string name="welocme">Bienvenido a Crime Busters</string>
     <string name="update_profile">Actualiza tu perfil</string>
-    <string name="low_priority">Informe Low Crimen Prioridad</string>
-    <string name="high_priority">Informe High Crime Prioridad</string>
+    <string name="low_priority">Informe de no - emergencia</string>
+    <string name="high_priority">Informe de emergencia</string>
     <string name="default_latitude">latitud</string>
     <string name="default_longitude">facilidad</string>
     <string name="take_photo">Tomar foto</string>
@@ -100,5 +100,5 @@
 	<string name="pic3">Pic 3</string>
 	<string name="audiopath">Ruta de audio</string>
 	<string name="videopath">Ruta de video</string>
-    
+    <string name="edit_Profile">Editar Perfil</string>
 </resources>

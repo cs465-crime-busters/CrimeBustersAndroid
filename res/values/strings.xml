@@ -55,6 +55,7 @@
     <string name="button_createVideo">Capture Video</string>
     <string name="title_activity_high_priority_incident">HighPriorityIncidentActivity</string>
     <string name="title_activity_update_profile">Update Profile</string>
+    <string name="title_activity_update_settings">Update Settings</string>
     <string name="updateUserButton">Update Profile</string>
     <string name="title_activity_register_user">RegisterUser</string>
     <string name="hint_userName">Username</string>
@@ -69,8 +70,8 @@
     <string name="default_password"></string>
     <string name="welocme">Welcome to Crime Busters</string>
     <string name="update_profile">Update Your Profile</string>
-    <string name="low_priority">Report Low Priority Crime</string>
-    <string name="high_priority">Report High Priority Crime</string>
+    <string name="low_priority">Report Non-Emergency</string>
+    <string name="high_priority">Report Emergency</string>
     <string name="default_latitude">Latitude</string>
     <string name="default_longitude">Longitude</string>
     <string name="take_photo">Take Photo</string>
@@ -100,4 +101,7 @@
 	<string name="pic3">Pic 3</string>
 	<string name="audiopath">Audio Path</string>
 	<string name="videopath">Video Path</string>
+	<string name="edit_Profile">Edit Profile</string>
+	<string name="report_anonymous">Report Anonymous</string>
+	<string name="prefrerred_contact">Preferred Contact Method</string>
 </resources>

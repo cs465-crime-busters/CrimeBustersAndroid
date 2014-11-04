@@ -27,6 +27,8 @@ public class User {
 	private String _phoneNumber;
 	private String _address;
 	private String _zipCode;
+	private String _preferredContact; 
+	private Boolean _reportAnonymous; 
 	private SharedPreferences _preference;
 	private final String UPDATE_PROFILE_SERVICE = "http://illinoiscrimebusters.com/Services/UpdateProfile.ashx";
 	private final String USER_INFO_SERVICE = "http://illinoiscrimebusters.com/Services/GetUserInfo.ashx";
@@ -304,5 +306,21 @@ public class User {
 	 */
 	public void setZipCode(String zipCode) {
 		this._zipCode = zipCode;
+	}
+
+	public String get_preferredContact() {
+		return _preferredContact;
+	}
+
+	public void set_preferredContact(String _preferredContact) {
+		this._preferredContact = _preferredContact;
+	}
+
+	public Boolean get_reportAnonymous() {
+		return _reportAnonymous;
+	}
+
+	public void set_reportAnonymous(Boolean _reportAnonymous) {
+		this._reportAnonymous = _reportAnonymous;
 	}
 }

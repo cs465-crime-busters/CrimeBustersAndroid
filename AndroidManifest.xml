@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -74,6 +74,15 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdateProfileActivity"
             android:label="@string/title_activity_update_profile"
+             android:screenOrientation="portrait" 
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crime.crimebusters.MainFormActivity" />
+        </activity>
+        <activity
+            android:name="com.illinoiscrimebusters.crimebusters.UpdateSettingsActivity"
+            android:label="@string/title_activity_update_settings"
              android:screenOrientation="portrait" 
             android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
             <meta-data

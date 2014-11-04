@@ -4,39 +4,29 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.crime.crimebusters.R;
-import com.illinoiscrimebusters.login.Login;
 import com.illinoiscrimebusters.user.User;
 
-/**
- * 
- * @author Khushbu Activity for the UpdateProfile page
- * 
- */
+
 public class UpdateProfileActivity extends Activity implements
 		OnItemSelectedListener {
 	private String _userName;
 	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
-	Spinner spinnerLanguage;
-	EditText selLanguage;
-	private String[] language = { "English", "French", "Spanish" };
+	//Spinner spinnerLanguage;
+	//EditText selLanguage;
+	//private String[] language = { "English", "French", "Spanish" };
 
 	@Override
 	/**
@@ -49,9 +39,9 @@ public class UpdateProfileActivity extends Activity implements
 
 		setUserPreferences();
 
-		spinnerLanguage = (Spinner) findViewById(R.id.spinnerlanguage);
+		//spinnerLanguage = (Spinner) findViewById(R.id.spinnerlanguage);
 
-		ArrayAdapter<String> adapter_language = new ArrayAdapter<String>(this,
+	/*	ArrayAdapter<String> adapter_language = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, language);
 		adapter_language
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -59,7 +49,7 @@ public class UpdateProfileActivity extends Activity implements
 		spinnerLanguage.setAdapter(adapter_language);
 		spinnerLanguage.setOnItemSelectedListener(this);
 		spinnerLanguage.setSelection(_reportSingleton.getPosition(), false);
-
+*/
 	}
 
 	/**
@@ -67,8 +57,8 @@ public class UpdateProfileActivity extends Activity implements
 	 * This method is called to set user preferences
 	 */
 	private void setUserPreferences() {
-		int theme = _reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
+		/*int theme = _reportSingleton.setTheme();
+		getWindow().setBackgroundDrawableResource(theme);*/
 
 		String lang = _reportSingleton.getLanguage();
 		if (lang != null) {
@@ -89,7 +79,7 @@ public class UpdateProfileActivity extends Activity implements
 	 * the intent is activated
 	 * 
 	 */
-	private void languagePreference() {
+	/*private void languagePreference() {
 		String selLang = (String) spinnerLanguage.getSelectedItem();
 		if (selLang.equalsIgnoreCase("English"))
 			changeLocale("en");
@@ -99,13 +89,13 @@ public class UpdateProfileActivity extends Activity implements
 
 		if (selLang.equalsIgnoreCase("Spanish"))
 			changeLocale("es");
-	}
+	}*/
 
 	/**
 	 * This method is called when a language is set from the language drop down
 	 * 
 	 */
-	public void onItemSelected(AdapterView<?> parent, View view, int position,
+	/*public void onItemSelected(AdapterView<?> parent, View view, int position,
 			long id) {
 		spinnerLanguage.setSelection(position);
 
@@ -117,7 +107,7 @@ public class UpdateProfileActivity extends Activity implements
 			}
 
 		}
-	}
+	}*/
 
 	@Override
 	/**
@@ -136,10 +126,10 @@ public class UpdateProfileActivity extends Activity implements
 	 * @throws InterruptedException
 	 * @throws ExecutionException
 	 */
-	public void changeLanguage(View view) throws InterruptedException,
+	/*	public void changeLanguage(View view) throws InterruptedException,
 			ExecutionException {
 
-		languagePreference();
+		//languagePreference();
 		String selLang = (String) spinnerLanguage.getSelectedItem();
 		_reportSingleton.setLanguage(selLang);
 
@@ -147,17 +137,18 @@ public class UpdateProfileActivity extends Activity implements
 		onResume();
 
 	}
-
+*/
 	@Override
 	/**
 	 * This method is called when the user returns to an intent from a paused state
 	 */
 	protected void onResume() {
 		super.onResume();
+		_reportSingleton.setName(_userName);
 		setUserPreferences();
 		initializeFields();
-
-		spinnerLanguage.setSelection(_reportSingleton.getPosition(), false);
+		//onCreate(null);
+		//spinnerLanguage.setSelection(_reportSingleton.getPosition(), false);
 	}
 
 	/**
@@ -420,7 +411,7 @@ public class UpdateProfileActivity extends Activity implements
 	 * 
 	 * @param view
 	 */
-	public void onLogoutClick(View view) {
+	/*public void onLogoutClick(View view) {
 		new AlertDialog.Builder(this)
 				.setTitle("Logout")
 				.setMessage("Are you sure you want to log out?")
@@ -442,5 +433,11 @@ public class UpdateProfileActivity extends Activity implements
 								dialog.cancel();
 							}
 						}).setIcon(android.R.drawable.ic_dialog_alert).show();
+	}
+*/
+	@Override
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3) {
+		// TODO Auto-generated method stub
 	}
 }

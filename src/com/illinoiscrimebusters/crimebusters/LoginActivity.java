@@ -19,8 +19,8 @@ import com.illinoiscrimebusters.login.Login;
 
 /**
  * Activity for the Login page.
- * @author Chris 
- * Testing
+ * @author Chris
+ *
  */
 public class LoginActivity extends Activity {	
 	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
 	 */
 	private void setUserPreferences() {
 		int theme = _reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
+		getWindow().setBackgroundDrawableResource(R.drawable.c2);
 		
 		String lang = _reportSingleton.getLanguage();
 		if (lang!=null)

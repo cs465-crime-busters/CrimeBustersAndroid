@@ -1,28 +1,26 @@
 package com.illinoiscrimebusters.crimebusters;
-
-import java.io.ByteArrayOutputStream;
 import java.util.Locale;
-
-import com.crime.crimebusters.R;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.format.Time;
-import android.util.Base64;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.crime.crimebusters.R;
 
 public class ReportIncidentActivity extends Activity implements
 		LocationListener {
@@ -36,6 +34,8 @@ public class ReportIncidentActivity extends Activity implements
 	private String provider;
 	private ImageView iv;
 	//private String ivString;
+	private Uri fileUri; 
+	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200; 
 
 
 	/** start add media activity and save already filled strings
@@ -71,16 +71,20 @@ public class ReportIncidentActivity extends Activity implements
 
 		GPS();
 		time();
-
+		
+		/*Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+		intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+		intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
+		startActivityForResult(intent, CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
+*/
 	}
 
 	/**
 	 * This method sets the theme and language as per user preference
 	 */
 	private void setUserPreferences() {
-		int theme = reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
-
+		/*int theme = reportSingleton.setTheme();
+		getWindow().setBackgroundDrawableResource(theme);*/
 		String lang = reportSingleton.getLanguage();
 		if (lang != null) {
 			if (lang.equalsIgnoreCase("English"))

@@ -1,9 +1,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:id="@+id/a_More"
+        android:icon="@drawable/ic_action_overflow"
+        android:showAsAction="always"
+        android:title="More">
+        <menu>
+            <item
+                android:id="@+id/menu_EditProfile"
+                android:orderInCategory="1"
+                android:showAsAction="never"
+                android:title="@string/edit_Profile"/>
+             <item
+                android:id="@+id/menu_EditSettings"
+                android:orderInCategory="2"
+                android:showAsAction="never"
+                android:title="@string/action_settings"/>
+            <item
+                android:id="@+id/menu_logout"
+                android:orderInCategory="3"
+                android:showAsAction="never"
+                android:title="@string/logout"/>
+        </menu>
+    </item>
 
 </menu>
+

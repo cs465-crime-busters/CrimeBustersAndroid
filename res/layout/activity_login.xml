@@ -29,7 +29,8 @@
 		android:textColorHint="#200772"
         android:text="@string/default_email"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" 
+        android:textColor="#ffffff"/>
 
     <EditText
         android:id="@+id/password"
@@ -45,7 +46,8 @@
         android:singleLine="true"
         android:text="@string/default_password"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" 
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/sign_in_button"

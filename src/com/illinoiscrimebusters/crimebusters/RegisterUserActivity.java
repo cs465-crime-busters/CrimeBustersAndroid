@@ -38,8 +38,8 @@ public class RegisterUserActivity extends Activity {
 	 * This method sets the theme and language as per user preference
 	 */
 	private void setUserPreferences() {
-		int theme = reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
+		//int theme = reportSingleton.setTheme();
+		//getWindow().setBackgroundDrawableResource(theme);
 
 		String lang = reportSingleton.getLanguage();
 		if (lang != null) {

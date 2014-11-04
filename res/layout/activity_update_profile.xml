@@ -13,9 +13,9 @@
         android:id="@+id/updateProfile_firstName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="#200772"
         android:hint="@string/hint_firstName"
         android:inputType="textPersonName"
+        android:textColorHint="#200772"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_lastName"
         android:inputType="textPersonName"
-        android:textSize="14sp"
         android:textColorHint="#200772"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_phoneNumber"
         android:inputType="phone"
-        android:textSize="14sp"
         android:textColorHint="#200772"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
@@ -45,8 +45,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_address"
         android:inputType="textPostalAddress"
-        android:textSize="14sp"
         android:textColorHint="#200772"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
@@ -55,27 +55,29 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_zipCode"
         android:inputType="text"
-        android:textSize="14sp"
         android:textColorHint="#200772"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
-	<RadioGroup
-	    android:id="@+id/updateProfile_gender"
+    <RadioGroup
+        android:id="@+id/updateProfile_gender"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
         <RadioButton
             android:id="@+id/male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/male" />
+
         <RadioButton
             android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/female" />
     </RadioGroup>
-    
+
     <Button
         android:id="@+id/updateProfile_button"
         android:layout_width="fill_parent"
@@ -87,18 +89,8 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/changeTheme_button"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:onClick="changeTheme"
-        android:tag="1"
-        android:text="@string/changeThemeButton"
-        android:textAlignment="4"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <Spinner
+    <!--
+         <Spinner
         android:id="@+id/spinnerlanguage"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -106,18 +98,11 @@
         android:textAlignment="4"
         android:textSize="14sp"
         android:textStyle="bold" />
-     
-<!--      <EditText -->
-<!--         android:id="@+id/selLanguage" -->
-<!--         android:layout_width="fill_parent" -->
-<!--         android:layout_height="40dp" -->
-<!--         android:editable="false" -->
-<!--         android:textAlignment="4" -->
-<!--         android:layout_marginTop="5dp" -->
-<!--         android:textSize="14sp" -->
-<!--         android:textStyle="bold"/> -->
-    
-    <Button
+    -->
+
+
+    <!--
+        <Button
         android:id="@+id/changeLanguage_button"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -128,9 +113,11 @@
         android:textAlignment="4"
         android:textSize="14sp"
         android:textStyle="bold" />
+    -->
 
-    
-	<Button
+
+    <!--
+         <Button
         android:id="@+id/updateProfile_logout"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -141,4 +128,60 @@
         android:textAlignment="4"
         android:textSize="14sp"
         android:textStyle="bold" />
+    -->
+
+    <!-- <Button
+        android:id="@+id/changeTheme_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:onClick="changeTheme"
+        android:tag="1"
+        android:text="@string/changeThemeButton"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" /> -->
+
+<!--     <Spinner
+        android:id="@+id/spinnerlanguage"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" /> -->
+
+   <!--<EditText>
+    android:id="@+id/selLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:editable="false"
+    android:textAlignment="4"
+    android:layout_marginTop="5dp"
+    android:textSize="14sp"
+    android:textStyle="bold"/> -->
+
+   <!--  <Button
+        android:id="@+id/changeLanguage_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:onClick="changeLanguage"
+        android:tag="1"
+        android:text="@string/changeLanguageButton"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" /> -->
+
+  <!--   <Button
+        android:id="@+id/updateProfile_logout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:onClick="onLogoutClick"
+        android:tag="1"
+        android:text="@string/logout"
+        android:textAlignment="4"
+        android:textSize="14sp"
+        android:textStyle="bold" /> -->
+
 </LinearLayout>
