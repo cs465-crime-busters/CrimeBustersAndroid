@@ -19,8 +19,8 @@ import com.illinoiscrimebusters.login.Login;
 
 /**
  * Activity for the Login page.
- * @author Chris
- *
+ * @author Chris 
+ * Testing
  */
 public class LoginActivity extends Activity {	
 	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
