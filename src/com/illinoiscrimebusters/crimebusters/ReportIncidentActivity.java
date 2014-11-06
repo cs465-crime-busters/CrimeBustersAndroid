@@ -55,14 +55,16 @@ public class ReportIncidentActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		setUserPreferences();
 
 		if (reportSingleton.getReportType() == 1) {
+			getActionBar().setTitle("Report Emergency");
 			setContentView(R.layout.activity_high_priority_incident);
 			Intent intent = getIntent();
 
 		} else {
+			getActionBar().setTitle("Report Non-Emergency");
 			setContentView(R.layout.activity_report_incident);
 			Intent intent = getIntent();
 			iv = (ImageView) findViewById(R.id.imageView1);

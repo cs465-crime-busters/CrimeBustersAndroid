@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
 		android:textColorHint="#200772"
         android:textSize="24sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold"
         android:hint="@string/hint_firstName"
         android:inputType="text" />

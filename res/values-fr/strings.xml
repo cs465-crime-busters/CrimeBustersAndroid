@@ -101,4 +101,6 @@
 	<string name="audiopath">Chemin de la audio</string>
 	<string name="videopath">Chemin de la vidéo</string>
 	<string name="edit_Profile">Editer le profil</string>
+	<string name="report_anonymous">Rapport Anonyme</string>
+	<string name="prefrerred_contact">Méthode de contact préférée</string>
 </resources>

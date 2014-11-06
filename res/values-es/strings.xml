@@ -101,4 +101,6 @@
 	<string name="audiopath">Ruta de audio</string>
 	<string name="videopath">Ruta de video</string>
     <string name="edit_Profile">Editar Perfil</string>
+	<string name="report_anonymous">Informe Anónimo</string>
+	<string name="prefrerred_contact">Método preferido del contacto</string>
 </resources>

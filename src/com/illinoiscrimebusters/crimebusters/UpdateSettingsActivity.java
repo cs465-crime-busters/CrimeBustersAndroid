@@ -33,6 +33,7 @@ public class UpdateSettingsActivity extends Activity implements
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setTitle("Settings");
 		setContentView(R.layout.activity_update_settings);
 		set_userName(getIntent().getStringExtra("userName"));
 
