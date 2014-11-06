@@ -55,7 +55,7 @@ public class ReportIncidentActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		setUserPreferences();
 
 		if (reportSingleton.getReportType() == 1) {

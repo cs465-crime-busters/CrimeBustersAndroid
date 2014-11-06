@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -50,6 +50,7 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdatedReportIncidentActivity"
             android:label="@string/title_activity_report_incident"
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -65,8 +66,8 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.HighPriorityIncidentActivity"
             android:label="@string/title_activity_high_priority_incident"
-             android:screenOrientation="portrait" 
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crime.crimebusters.MainFormActivity" />
@@ -74,8 +75,8 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdateProfileActivity"
             android:label="@string/title_activity_update_profile"
-             android:screenOrientation="portrait" 
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crime.crimebusters.MainFormActivity" />
@@ -83,23 +84,26 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdateSettingsActivity"
             android:label="@string/title_activity_update_settings"
-             android:screenOrientation="portrait" 
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity" >
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crime.crimebusters.MainFormActivity" />
         </activity>
         <activity
-            android:name="com.illinoiscrimebusters.crimebusters.RegisterUserActivity" 
-             android:screenOrientation="portrait" 
-            android:label="@string/title_activity_register_user" >
-           
+            android:name="com.illinoiscrimebusters.crimebusters.RegisterUserActivity"
+            android:label="@string/title_activity_register_user"
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.LoginActivity"
+            android:screenOrientation="portrait" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crime.crimebusters.LoginActivity" />
         </activity>
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.MediaActivity"
             android:label="@string/title_activity_media"
-            android:screenOrientation="portrait" 
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.ReportIncidentActivity" >
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.ReportIncidentActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.illinoiscrimebusters.crimebusters" />

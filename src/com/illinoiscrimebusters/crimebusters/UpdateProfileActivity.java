@@ -15,18 +15,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.app.ActionBar;
 
 import com.crime.crimebusters.R;
 import com.illinoiscrimebusters.user.User;
-
 
 public class UpdateProfileActivity extends Activity implements
 		OnItemSelectedListener {
 	private String _userName;
 	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
-	//Spinner spinnerLanguage;
-	//EditText selLanguage;
-	//private String[] language = { "English", "French", "Spanish" };
 
 	@Override
 	/**
@@ -34,22 +31,14 @@ public class UpdateProfileActivity extends Activity implements
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		getActionBar().setTitle("Edit Profile");
+		
 		setContentView(R.layout.activity_update_profile);
 		_userName = getIntent().getStringExtra("userName");
 
 		setUserPreferences();
 
-		//spinnerLanguage = (Spinner) findViewById(R.id.spinnerlanguage);
-
-	/*	ArrayAdapter<String> adapter_language = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, language);
-		adapter_language
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		spinnerLanguage.setAdapter(adapter_language);
-		spinnerLanguage.setOnItemSelectedListener(this);
-		spinnerLanguage.setSelection(_reportSingleton.getPosition(), false);
-*/
 	}
 
 	/**
@@ -57,8 +46,10 @@ public class UpdateProfileActivity extends Activity implements
 	 * This method is called to set user preferences
 	 */
 	private void setUserPreferences() {
-		/*int theme = _reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);*/
+		/*
+		 * int theme = _reportSingleton.setTheme();
+		 * getWindow().setBackgroundDrawableResource(theme);
+		 */
 
 		String lang = _reportSingleton.getLanguage();
 		if (lang != null) {
@@ -74,41 +65,6 @@ public class UpdateProfileActivity extends Activity implements
 		}
 	}
 
-	/**
-	 * This is the function that sets the language when it is modified or when
-	 * the intent is activated
-	 * 
-	 */
-	/*private void languagePreference() {
-		String selLang = (String) spinnerLanguage.getSelectedItem();
-		if (selLang.equalsIgnoreCase("English"))
-			changeLocale("en");
-
-		if (selLang.equalsIgnoreCase("French"))
-			changeLocale("fr");
-
-		if (selLang.equalsIgnoreCase("Spanish"))
-			changeLocale("es");
-	}*/
-
-	/**
-	 * This method is called when a language is set from the language drop down
-	 * 
-	 */
-	/*public void onItemSelected(AdapterView<?> parent, View view, int position,
-			long id) {
-		spinnerLanguage.setSelection(position);
-
-		String selLang = (String) spinnerLanguage.getSelectedItem();
-
-		for (int i = 0; i < 3; i++) {
-			if (language[i].equalsIgnoreCase(selLang)) {
-				_reportSingleton.setPosition(i);
-			}
-
-		}
-	}*/
-
 	@Override
 	/**
 	 * Empty auto generated stub for the abstract method onNothingSelected for OnItemSelectedListener
@@ -118,26 +74,6 @@ public class UpdateProfileActivity extends Activity implements
 
 	}
 
-	/**
-	 * 
-	 * This method is called when the button Change Language is clicked
-	 * 
-	 * @param view
-	 * @throws InterruptedException
-	 * @throws ExecutionException
-	 */
-	/*	public void changeLanguage(View view) throws InterruptedException,
-			ExecutionException {
-
-		//languagePreference();
-		String selLang = (String) spinnerLanguage.getSelectedItem();
-		_reportSingleton.setLanguage(selLang);
-
-		onCreate(null);
-		onResume();
-
-	}
-*/
 	@Override
 	/**
 	 * This method is called when the user returns to an intent from a paused state
@@ -147,8 +83,6 @@ public class UpdateProfileActivity extends Activity implements
 		_reportSingleton.setName(_userName);
 		setUserPreferences();
 		initializeFields();
-		//onCreate(null);
-		//spinnerLanguage.setSelection(_reportSingleton.getPosition(), false);
 	}
 
 	/**
@@ -406,35 +340,6 @@ public class UpdateProfileActivity extends Activity implements
 		return firstName.equals("") || lastName.equals("");
 	}
 
-	/**
-	 * This method is called when the user clicks on the "log Out" button.
-	 * 
-	 * @param view
-	 */
-	/*public void onLogoutClick(View view) {
-		new AlertDialog.Builder(this)
-				.setTitle("Logout")
-				.setMessage("Are you sure you want to log out?")
-				.setPositiveButton(android.R.string.ok,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
-								Login login = new Login();
-								login.logOut(UpdateProfileActivity.this);
-								Intent intent = new Intent(getBaseContext(),
-										LoginActivity.class);
-								startActivity(intent);
-							}
-						})
-				.setNegativeButton(android.R.string.cancel,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.cancel();
-							}
-						}).setIcon(android.R.drawable.ic_dialog_alert).show();
-	}
-*/
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
