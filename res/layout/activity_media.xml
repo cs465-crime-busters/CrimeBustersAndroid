@@ -19,7 +19,7 @@
                  android:textStyle="bold" />
 
          <Button
-             android:id="@+id/Picture1"
+             android:id="@+id/pictureCaptureButton"
              android:layout_width="60dp"
              android:layout_height="wrap_content"
              android:layout_alignLeft="@+id/imageView1"
@@ -35,8 +35,8 @@
                       android:id="@+id/Picture2"
                       android:layout_width="60dp"
                       android:layout_height="wrap_content"
-                      android:layout_alignBaseline="@+id/Picture1"
-                      android:layout_alignBottom="@+id/Picture1"
+                      android:layout_alignBaseline="@+id/pictureCaptureButton"
+                      android:layout_alignBottom="@+id/pictureCaptureButton"
                       android:layout_alignLeft="@+id/imageView2"
                       android:gravity="center"
                       android:onClick="takePicture2"
@@ -88,7 +88,7 @@
                           android:layout_alignBaseline="@+id/textView1"
                           android:layout_alignBottom="@+id/textView1"
                           android:layout_alignLeft="@+id/imageView4"
-                          android:layout_alignRight="@+id/recordButton"
+                          android:layout_alignRight="@+id/recordVideoButton"
                           android:layout_marginLeft="20dp"
                           android:gravity="right"
                           android:text="@string/audiopath"
@@ -100,8 +100,8 @@
                               android:id="@+id/button2"
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
-                              android:layout_alignBaseline="@+id/button3"
-                              android:layout_alignBottom="@+id/button3"
+                              android:layout_alignBaseline="@+id/audioPlayButton"
+                              android:layout_alignBottom="@+id/audioPlayButton"
                               android:layout_alignRight="@+id/textView2"
                               android:onClick="stop"
                               android:text="@string/stop"
@@ -136,11 +136,11 @@
                                      android:text="@string/videopath" />
 
                                  <Button
-                                     android:id="@+id/button1"
+                                     android:id="@+id/audioRecordButton"
                                      android:layout_width="wrap_content"
                                      android:layout_height="wrap_content"
-                                     android:layout_above="@+id/recordButton"
-                                     android:layout_alignLeft="@+id/recordButton"
+                                     android:layout_above="@+id/recordVideoButton"
+                                     android:layout_alignLeft="@+id/recordVideoButton"
                                      android:layout_marginBottom="18dp"
                                      android:onClick="start" 
                                      android:text="@string/start"
@@ -148,7 +148,7 @@
                                      android:textStyle="bold" />
 
                                  <Button
-                                     android:id="@+id/recordButton"
+                                     android:id="@+id/recordVideoButton"
                                      android:layout_width="match_parent"
                                      android:layout_height="wrap_content"
                                      android:layout_above="@+id/textView3"
@@ -160,12 +160,12 @@
                                      android:textStyle="bold" />
 	
                                  <Button
-                                     android:id="@+id/button3"
+                                     android:id="@+id/audioPlayButton"
                                      style="?android:attr/buttonStyleSmall"
                                      android:layout_width="wrap_content"
                                      android:layout_height="wrap_content"
-                                     android:layout_alignBaseline="@+id/button1"
-                                     android:layout_alignBottom="@+id/button1"
+                                     android:layout_alignBaseline="@+id/audioRecordButton"
+                                     android:layout_alignBottom="@+id/audioRecordButton"
                                      android:layout_centerHorizontal="true"
                                      android:onClick="play"
                                      android:text="@string/play"
@@ -177,7 +177,7 @@
                                      android:layout_width="wrap_content"
                                      android:layout_height="wrap_content"
                                      android:layout_above="@+id/imageView4"
-                                     android:layout_alignLeft="@+id/Picture1"
+                                     android:layout_alignLeft="@+id/pictureCaptureButton"
                                      android:layout_marginBottom="8dp"
                                      android:gravity="center"
                                      android:text="@string/Recording"
@@ -189,7 +189,7 @@
                                      android:id="@+id/imageView4"
                                      android:layout_width="40dp"
                                      android:layout_height="40dp"
-                                     android:layout_above="@+id/button3"
+                                     android:layout_above="@+id/audioPlayButton"
                                      android:layout_alignRight="@+id/Picture2"
                                      android:layout_marginBottom="16dp"
                                      android:scaleType="fitXY"

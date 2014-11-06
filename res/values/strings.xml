@@ -92,10 +92,13 @@
     <string name="click_picture3">Click third picture</string>
     <string name="returnToSubmit">Return to Submission</string>
     <string name="Recording">Record Audio</string>
+    <string name="Record">Rec</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
     <string name="play">play</string>
     <string name="button_video">Record Video</string>
+    <string name="btn_video">Vid</string>
+    <string name="pic">Pic</string>
 	<string name="pic1">Pic 1</string>
 	<string name="pic2">Pic 2</string>
 	<string name="pic3">Pic 3</string>

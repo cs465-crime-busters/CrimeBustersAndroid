@@ -23,7 +23,7 @@ import com.illinoiscrimebusters.login.Login;
  *
  */
 public class LoginActivity extends Activity {	
-	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
+	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
 	private SharedPreferences _preference;
 	
 	@Override

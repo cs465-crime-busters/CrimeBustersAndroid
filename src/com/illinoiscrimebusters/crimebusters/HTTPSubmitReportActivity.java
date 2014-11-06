@@ -21,7 +21,7 @@ import android.widget.TextView;
 */
 	 
 public class HTTPSubmitReportActivity extends Activity {
-	ReportSingleton reportSingleton = ReportSingleton.getInstance();
+	UpdatedReportSingleton reportSingleton = UpdatedReportSingleton.getInstance();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class HTTPSubmitReportActivity extends Activity {
 		setContentView(R.layout.activity_submit_report);
 		Intent intent = getIntent();
 
-		ReportSingleton r = ReportSingleton.getInstance();
+		UpdatedReportSingleton r = UpdatedReportSingleton.getInstance();
 		String name = r.getName();
 
 		TextView nameView = (TextView) findViewById(R.id.textView2);

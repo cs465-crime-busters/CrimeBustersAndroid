@@ -73,9 +73,9 @@ public class MediaActivity extends Activity {
 		}
 
 		// Audio
-		start = (Button) findViewById(R.id.button1);
+		start = (Button) findViewById(R.id.audioRecordButton);
 		stop = (Button) findViewById(R.id.button2);
-		play = (Button) findViewById(R.id.button3);
+		play = (Button) findViewById(R.id.audioPlayButton);
 
 		stop.setEnabled(false);
 		play.setEnabled(false);
@@ -92,9 +92,9 @@ public class MediaActivity extends Activity {
 		myAudioRecorder.setOutputFile(outputFile);
 
 		// Video
-		Button recBtn = (Button) findViewById(R.id.recordButton);
+		Button recBtn = (Button) findViewById(R.id.recordVideoButton);
 
-		Button pic1Btn = (Button) findViewById(R.id.Picture1);
+		Button pic1Btn = (Button) findViewById(R.id.pictureCaptureButton);
 		Button pic2Btn = (Button) findViewById(R.id.Picture2);
 		Button pic3Btn = (Button) findViewById(R.id.Picture3);
 

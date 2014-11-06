@@ -132,7 +132,7 @@ public class ReportIncidentActivity extends Activity implements
 		String format = "%m/%d/%y %H:%M:%S";
 		String time = now.format(format);
 
-		((EditText) findViewById(R.id.editText_currentTime)).setText(time);
+		((EditText) findViewById(R.id.editText_currentTime_RO)).setText(time);
 
 	}
 
@@ -258,7 +258,7 @@ public class ReportIncidentActivity extends Activity implements
 
 		location = ((EditText) findViewById(R.id.location)).getText()
 				.toString();
-		timestamp = ((EditText) findViewById(R.id.editText_currentTime))
+		timestamp = ((EditText) findViewById(R.id.editText_currentTime_RO))
 				.getText().toString();
 		latitude = ((EditText) findViewById(R.id.locationGPS_lat)).getText()
 				.toString();

@@ -20,7 +20,7 @@ import com.crime.crimebusters.R;
 public class UpdateSettingsActivity extends Activity implements
 		OnItemSelectedListener {
 	private String _userName;
-	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
+	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
 	Spinner spinnerLanguage;
 	EditText selLanguage;
 	Spinner spinnerPreferredContact; 

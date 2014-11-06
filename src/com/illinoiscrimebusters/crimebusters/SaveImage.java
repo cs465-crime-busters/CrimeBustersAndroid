@@ -51,16 +51,10 @@ public class SaveImage {
 				+ ".jpg";
 
 		// Each image is associated to a specific button
-		String whichButton = ReportSingleton.getInstance().getWhichButton();
+		String whichButton = UpdatedReportSingleton.getInstance().getWhichButton();
 
-		if (whichButton == "1") {
-			ReportSingleton.getInstance().setImage1(imageLocation);
-		} else if (whichButton == "2") {
-			ReportSingleton.getInstance().setImage2(imageLocation);
-		} else {
-			ReportSingleton.getInstance().setImage3(imageLocation);
-
-		}
+		UpdatedReportSingleton.getInstance().setImage(imageLocation);
+		
 
 		// We will use jpeg for our images
 		try {

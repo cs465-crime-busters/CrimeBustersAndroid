@@ -25,7 +25,7 @@ public class MainFormActivity extends Activity {
 
 	public static final String PANIC_MESSAGE = "Panic Message";
 	public static final String REPORT_MESSAGE = "Report Message";
-	ReportSingleton _reportSingleton = ReportSingleton.getInstance();
+	UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
 	private String _userName;
 
 	@SuppressWarnings("null")
@@ -190,7 +190,7 @@ public class MainFormActivity extends Activity {
 	 * @param view
 	 */
 	public void incident(View view) {
-		Intent intent = new Intent(this, ReportIncidentActivity.class);
+		Intent intent = new Intent(this, UpdatedReportIncidentActivity.class);
 		_reportSingleton.setReportType(1); // high
 		startActivity(intent);
 	}
@@ -202,7 +202,7 @@ public class MainFormActivity extends Activity {
 	 * @param view
 	 */
 	public void report(View view) {
-		Intent intent = new Intent(this, ReportIncidentActivity.class);
+		Intent intent = new Intent(this, UpdatedReportIncidentActivity.class);
 		_reportSingleton.setReportType(2); // low priority
 		startActivity(intent);
 	}

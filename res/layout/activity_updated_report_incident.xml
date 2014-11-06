@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ReportIncidentActivity" >
+    tools:context="com.illinoiscrimebusters.crimebusters.UpdatedReportIncidentActivity" >
 
     <requestFocus />
 
@@ -19,7 +19,7 @@
         android:hint="@string/location_gps"
         android:text="@string/default_latitude"
         android:textColorHint="#200772"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
@@ -33,32 +33,7 @@
         android:hint="@string/location_gps"
         android:text="@string/default_longitude"
         android:textColorHint="#200772"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/addMedia"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignTop="@+id/imageView1"
-        android:layout_toRightOf="@+id/imageView1"
-        android:gravity="center"
-        android:onClick="addMedia"
-        android:paddingLeft="0dp"
-        android:text="@string/add_media"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/submitReport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignParentBottom="true"
-        android:onClick="submitReport"
-        android:text="@string/submit_report"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
@@ -70,8 +45,9 @@
         android:ems="10"
         android:hint="@string/desc"
         android:inputType="textMultiLine"
+        android:textAlignment="textStart"
         android:textColorHint="#200772"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
@@ -103,14 +79,72 @@
         android:textSize="24dp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignLeft="@+id/message"
-        android:layout_below="@+id/message"
-        android:src="@drawable/ic_launcher"
+    <Button
+        android:id="@+id/pictureCaptureButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_alignLeft="@+id/submitReport"
+        android:background="@drawable/ic_action_camera_dark"
+        android:gravity="center"
+        android:onClick="takePicture"
+        android:paddingLeft="0dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/audioPlayButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_toRightOf="@+id/audioRecordButton"
+        android:background="@drawable/ic_action_play_dark"
+        android:onClick="play"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_toRightOf="@+id/audioPlayButton"
+        android:background="@drawable/ic_action_stop_dark"
+        android:onClick="stop"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/audioRecordButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_toRightOf="@+id/pictureCaptureButton"
+        android:background="@drawable/ic_action_mic_dark"
+        android:onClick="startAudioRecording"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/submitReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:drawableRight="@drawable/ic_action_send_dark"
+        android:onClick="submitReport"
+        android:text="@string/submit_report"
         android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/recordVideoButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button2"
+        android:background="@drawable/ic_action_video_dark"
+        android:onClick="startRecording"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

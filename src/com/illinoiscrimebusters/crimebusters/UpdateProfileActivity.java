@@ -23,7 +23,7 @@ import com.illinoiscrimebusters.user.User;
 public class UpdateProfileActivity extends Activity implements
 		OnItemSelectedListener {
 	private String _userName;
-	private ReportSingleton _reportSingleton = ReportSingleton.getInstance();
+	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
 	//Spinner spinnerLanguage;
 	//EditText selLanguage;
 	//private String[] language = { "English", "French", "Spanish" };

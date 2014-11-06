@@ -24,7 +24,7 @@ import android.widget.Toast;
  */
 public class RegisterUserActivity extends Activity {
 
-	ReportSingleton reportSingleton = ReportSingleton.getInstance();
+	UpdatedReportSingleton reportSingleton = UpdatedReportSingleton.getInstance();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
