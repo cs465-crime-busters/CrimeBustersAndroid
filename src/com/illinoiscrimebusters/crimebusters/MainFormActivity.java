@@ -50,7 +50,7 @@ public class MainFormActivity extends Activity {
 		else
 		{
 			User user = new User(); 
-			_userName = user.getUserName();
+			_userName = getSharedPreferences("cbPreference",MODE_PRIVATE).getString("userName", _userName);
 		}
 		
 		if (_userName != null) {
