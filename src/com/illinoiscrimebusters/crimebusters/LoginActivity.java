@@ -20,7 +20,7 @@ import com.illinoiscrimebusters.login.Login;
 /**
  * Activity for the Login page.
  * @author Chris
- *
+ * test commit. 
  */
 public class LoginActivity extends Activity {	
 	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton.getInstance();
