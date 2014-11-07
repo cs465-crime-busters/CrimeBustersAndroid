@@ -32,6 +32,7 @@ public class UpdateSettingsActivity extends Activity implements
 	 * This is the method that is called when an intent is initialized for the first time
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
+		getActionBar().setTitle("Settings");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_update_settings);
 		set_userName(getIntent().getStringExtra("userName"));

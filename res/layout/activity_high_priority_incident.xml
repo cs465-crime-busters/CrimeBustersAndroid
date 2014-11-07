@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.illinoiscrimebusters.crimebusters.UpdatedReportIncidentActivity" >
+    tools:context=".UpdatedReportIncidentActivity" >
  
     <requestFocus />
  
@@ -29,7 +29,7 @@
         android:layout_height="50dp"
         android:layout_above="@+id/editText_currentTime_RO"
         android:layout_alignLeft="@+id/editText_currentTime_RO"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:editable="false"
         android:ems="10"
         android:hint="@string/location_gps"

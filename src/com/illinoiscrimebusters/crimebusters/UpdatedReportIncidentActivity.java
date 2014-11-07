@@ -109,12 +109,14 @@ LocationListener {
 
 		Log.v(ACTIVITY_SERVICE, "Report Singleton "+reportSingleton.getReportType());
 		if (reportSingleton.getReportType() == 1) {
+			getActionBar().setTitle("Report Emergency");
 			setContentView(R.layout.activity_high_priority_incident);
 			Button picBtn = (Button) findViewById(R.id.pictureCaptureButton);
 			
 			if (picBtn != null) picBtn.setVisibility(View.INVISIBLE);
 			
 		} else { // Report Singleton type is 2
+			getActionBar().setTitle("Report Non-Emergency");
 			setContentView(R.layout.activity_updated_report_incident);
 			
 			initializeButtonsStates();
@@ -190,10 +192,10 @@ LocationListener {
 	 * This method sets the theme and language as per user preference
 	 */
 	private void setUserPreferences() {
-		int theme = reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
+		//int theme = reportSingleton.setTheme();
+		//getWindow().setBackgroundDrawableResource(theme);
 
-		setContentView(R.layout.activity_updated_report_incident);
+		//setContentView(R.layout.activity_updated_report_incident);
 
 		String lang = reportSingleton.getLanguage();
 		if (lang != null) {
