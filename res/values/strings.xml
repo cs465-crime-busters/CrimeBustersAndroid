@@ -107,4 +107,10 @@
 	<string name="edit_Profile">Edit Profile</string>
 	<string name="report_anonymous">Report Anonymous</string>
 	<string name="prefrerred_contact">Preferred Contact Method</string>
+	<string-array name="crimetypes_array">
+        <item>Theft</item>
+        <item>Mugging</item>
+        <item>Break-in</item>
+        <item>Harassment </item>
+    </string-array>
 </resources>

@@ -29,9 +29,11 @@ import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -121,6 +123,7 @@ LocationListener {
 			
 			initializeButtonsStates();
 			initializeButtons();
+			initializeSpinner();
 		}
 
 		initializeGPS();
@@ -128,6 +131,17 @@ LocationListener {
 
 
 		//Log.v(ACTIVITY_SERVICE, "Time as on form "+((EditText) findViewById(R.id.editText_currentTime_RO)).getText().toString());
+	}
+	
+	private void initializeSpinner() {
+		Spinner spinner = (Spinner) findViewById(R.id.crimteTypespinner);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.crimetypes_array, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
 	}
 
 	private void initializeButtons() {

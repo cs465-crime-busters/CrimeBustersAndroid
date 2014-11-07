@@ -11,72 +11,46 @@
     <requestFocus />
 
     <EditText
-        android:id="@+id/locationGPS_lat"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:editable="false"
-        android:ems="10"
-        android:hint="@string/location_gps"
-        android:text="@string/default_latitude"
-        android:textColorHint="#200772"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
         android:id="@+id/locationGPS_long"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/locationGPS_lat"
+        android:layout_alignRight="@+id/locationGPS_lat"
         android:layout_below="@+id/locationGPS_lat"
         android:editable="false"
         android:ems="10"
         android:hint="@string/location_gps"
         android:text="@string/default_longitude"
         android:textColorHint="#200772"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/message"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_alignLeft="@+id/location"
-        android:layout_below="@+id/location"
+        android:layout_height="50dp"
+        android:layout_above="@+id/pictureCaptureButton"
+        android:layout_alignLeft="@+id/crimteTypespinner"
+        android:layout_alignRight="@+id/recordVideoButton"
         android:ems="10"
         android:hint="@string/desc"
         android:inputType="textMultiLine"
         android:textAlignment="textStart"
         android:textColorHint="#200772"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/editText_currentTime_RO"
         android:layout_below="@+id/editText_currentTime_RO"
         android:ems="10"
         android:hint="@string/location_human"
         android:inputType="textPostalAddress"
         android:textColorHint="#200772"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText_currentTime_RO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/locationGPS_long"
-        android:layout_below="@+id/locationGPS_long"
-        android:layout_marginTop="16dp"
-        android:editable="false"
-        android:ems="10"
-        android:hint="@string/time"
-        android:textColor="#000000"
-        android:textColorHighlight="#000000"
-        android:textColorHint="#200772"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <Button
@@ -145,6 +119,46 @@
         android:background="@drawable/ic_action_video_dark"
         android:onClick="startRecording"
         android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText_currentTime_RO"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/locationGPS_long"
+        android:layout_alignRight="@+id/locationGPS_long"
+        android:layout_below="@+id/locationGPS_long"
+        android:editable="false"
+        android:ems="10"
+        android:hint="@string/time"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#200772"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/crimteTypespinner"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@id/location"
+        android:layout_below="@+id/location"
+        android:ems="10"
+        android:textColor="#200772"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/locationGPS_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:editable="false"
+        android:ems="10"
+        android:hint="@string/location_gps"
+        android:text="@string/default_latitude"
+        android:textColorHint="#200772"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
