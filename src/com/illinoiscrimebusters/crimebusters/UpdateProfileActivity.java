@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.app.ActionBar;
 
 import com.crime.crimebusters.R;
 import com.illinoiscrimebusters.user.User;
@@ -146,9 +145,6 @@ public class UpdateProfileActivity extends Activity implements
 		EditText editFirstName = (EditText) findViewById(R.id.updateProfile_firstName);
 		EditText editLastName = (EditText) findViewById(R.id.updateProfile_lastName);
 		EditText editPhoneNumber = (EditText) findViewById(R.id.updateProfile_phoneNumber);
-		EditText editAddress = (EditText) findViewById(R.id.updateProfile_address);
-		EditText editZipCode = (EditText) findViewById(R.id.updateProfile_zipCode);
-		RadioGroup radioGender = (RadioGroup) findViewById(R.id.updateProfile_gender);
 
 		SharedPreferences preference = getSharedPreferences("cbPreference",
 				MODE_PRIVATE);
@@ -156,8 +152,7 @@ public class UpdateProfileActivity extends Activity implements
 
 		if (!firstName.equals("")) {
 			initializeFromPreference(editFirstName, editLastName,
-					editPhoneNumber, editAddress, editZipCode, radioGender,
-					preference);
+					editPhoneNumber, preference);
 			return;
 		}
 		User user = new User(_userName);
@@ -171,8 +166,7 @@ public class UpdateProfileActivity extends Activity implements
 			e.printStackTrace();
 		}
 
-		initializeFromDatabase(editFirstName, editLastName, editPhoneNumber,
-				editAddress, editZipCode, radioGender, user);
+		initializeFromDatabase(editFirstName, editLastName, editPhoneNumber, user);
 	}
 
 	/**
@@ -194,19 +188,10 @@ public class UpdateProfileActivity extends Activity implements
 	 *            User object from the database
 	 */
 	private void initializeFromDatabase(EditText editFirstName,
-			EditText editLastName, EditText editPhoneNumber,
-			EditText editAddress, EditText editZipCode, RadioGroup radioGender,
-			User user) {
+			EditText editLastName, EditText editPhoneNumber, User user) {
 		editFirstName.setText(user.getFirstName());
 		editLastName.setText(user.getLastName());
 		editPhoneNumber.setText(user.getPhoneNumber());
-		editAddress.setText(user.getAddress());
-		editZipCode.setText(user.getZipCode());
-
-		RadioButton selectedRadioButton = (RadioButton) radioGender
-				.findViewById(user.getGender().equals("M") ? R.id.male
-						: R.id.female);
-		selectedRadioButton.setChecked(true);
 	}
 
 	/**
@@ -232,18 +217,10 @@ public class UpdateProfileActivity extends Activity implements
 	 */
 	private void initializeFromPreference(EditText editFirstName,
 			EditText editLastName, EditText editPhoneNumber,
-			EditText editAddress, EditText editZipCode, RadioGroup radioGender,
 			SharedPreferences preference) {
 		editFirstName.setText(preference.getString("firstName", ""));
 		editLastName.setText(preference.getString("lastName", ""));
 		editPhoneNumber.setText(preference.getString("phoneNumber", ""));
-		editAddress.setText(preference.getString("address", ""));
-		editZipCode.setText(preference.getString("zipCode", ""));
-
-		RadioButton selectedRadioButton = (RadioButton) radioGender
-				.findViewById(preference.getString("zipCode", "").equals("M") ? R.id.male
-						: R.id.female);
-		selectedRadioButton.setChecked(true);
 
 		return;
 	}
@@ -271,26 +248,15 @@ public class UpdateProfileActivity extends Activity implements
 		EditText editPhoneNumber = (EditText) findViewById(R.id.updateProfile_phoneNumber);
 		String phoneNumber = editPhoneNumber.getText().toString();
 
-		EditText editAddress = (EditText) findViewById(R.id.updateProfile_address);
-		String address = editAddress.getText().toString();
-
-		EditText editZipCode = (EditText) findViewById(R.id.updateProfile_zipCode);
-		String zipCode = editZipCode.getText().toString();
-
-		RadioGroup radioGender = (RadioGroup) findViewById(R.id.updateProfile_gender);
-		int checkedGenderId = radioGender.getCheckedRadioButtonId();
-		String gender = checkedGenderId == R.id.male ? "M" : "F";
-
-		if (!validateFields(firstName, lastName, checkedGenderId)) {
+		if (!validateFields(firstName, lastName)) {
 			Toast.makeText(this,
-					"First, last name and gender fields are required.",
+					"First and last name fields are required.",
 					Toast.LENGTH_LONG).show();
 			dialog.dismiss();
 			return;
 		}
 
-		User user = new User(_userName, firstName, lastName, gender,
-				phoneNumber, address, zipCode);
+		User user = new User(_userName, firstName, lastName, phoneNumber);
 		String updateStatus = user.updateProfile(UpdateProfileActivity.this);
 
 		if (updateStatus.equals("success")) {
@@ -319,9 +285,8 @@ public class UpdateProfileActivity extends Activity implements
 	 *            ID of the selected gender
 	 * @return true if validation succeeds.
 	 */
-	private boolean validateFields(String firstName, String lastName,
-			int selectedGenderId) {
-		if (isFieldEmpty(firstName, lastName) || selectedGenderId == -1) {
+	private boolean validateFields(String firstName, String lastName) {
+		if (isFieldEmpty(firstName, lastName)) {
 			return false;
 		}
 		return true;

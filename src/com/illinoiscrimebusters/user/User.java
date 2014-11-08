@@ -23,10 +23,7 @@ public class User {
 	private String _userName;
 	private String _firstName;
 	private String _lastName;
-	private String _gender;
 	private String _phoneNumber;
-	private String _address;
-	private String _zipCode;
 	private String _preferredContact; 
 	private Boolean _reportAnonymous; 
 	private SharedPreferences _preference;
@@ -52,20 +49,14 @@ public class User {
 	 * @param userName
 	 * @param firstName
 	 * @param lastName
-	 * @param gender
 	 * @param phoneNumber
-	 * @param address
-	 * @param zipCode
 	 */
 	public User(String userName, String firstName, String lastName,
-			String gender, String phoneNumber, String address, String zipCode) {
+			String phoneNumber) {
 		_userName = userName;
 		_firstName = firstName;
 		_lastName = lastName;
-		_gender = gender;
 		_phoneNumber = phoneNumber;
-		_address = address;
-		_zipCode = zipCode;
 	}
 
 	/**
@@ -77,8 +68,7 @@ public class User {
 	public String updateProfile(Activity activity) throws InterruptedException,
 			ExecutionException {
 		AsyncTask<String, Void, String> task = new UpdateUserTask().execute(
-				_firstName, _lastName, _gender, _phoneNumber, _address,
-				_zipCode, _userName);
+				_firstName, _lastName, _phoneNumber, _userName);
 		try {
 			JSONObject jsonObject = new JSONObject(task.get());
 			String result = jsonObject.getString("result");
@@ -89,10 +79,7 @@ public class User {
 						Context.MODE_PRIVATE);
 				_preference.edit().putString("firstName", _firstName)
 						.putString("lastName", _lastName)
-						.putString("phoneNumber", _phoneNumber)
-						.putString("address", _address)
-						.putString("zipCode", _zipCode)
-						.putString("gender", _gender).commit();
+						.putString("phoneNumber", _phoneNumber).commit();
 			}
 
 			return result;
@@ -121,10 +108,7 @@ public class User {
 
 			setFirstName(jsonObject.getString("FirstName"));
 			setLastName(jsonObject.getString("LastName"));
-			setGender(jsonObject.getString("Gender"));
 			setPhoneNumber(jsonObject.getString("PhoneNumber"));
-			setAddress(jsonObject.getString("Address"));
-			setZipCode(jsonObject.getString("ZipCode"));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -142,11 +126,8 @@ public class User {
 			RestClient client = new RestClient(UPDATE_PROFILE_SERVICE);
 			client.AddParam("firstName", params[0]);
 			client.AddParam("lastName", params[1]);
-			client.AddParam("gender", params[2]);
-			client.AddParam("phoneNumber", params[3]);
-			client.AddParam("address", params[4]);
-			client.AddParam("zipCode", params[5]);
-			client.AddParam("userName", params[6]);
+			client.AddParam("phoneNumber", params[2]);
+			client.AddParam("userName", params[3]);
 
 			try {
 				client.Execute(RequestMethod.POST);
@@ -236,25 +217,6 @@ public class User {
 	}
 
 	/**
-	 * Gets the gender of the user
-	 * 
-	 * @return "M" for male, "F" for female
-	 */
-	public String getGender() {
-		return _gender;
-	}
-
-	/**
-	 * Sets the gender of the user
-	 * 
-	 * @param gender
-	 *            Either "M" or "F"
-	 */
-	public void setGender(String gender) {
-		this._gender = gender;
-	}
-
-	/**
 	 * Gets the phone number
 	 * 
 	 * @return
@@ -270,42 +232,6 @@ public class User {
 	 */
 	public void setPhoneNumber(String phoneNumber) {
 		this._phoneNumber = phoneNumber;
-	}
-
-	/**
-	 * Gets the user address
-	 * 
-	 * @return the user's address
-	 */
-	public String getAddress() {
-		return _address;
-	}
-
-	/**
-	 * Sets the user's address
-	 * 
-	 * @param address
-	 */
-	public void setAddress(String address) {
-		this._address = address;
-	}
-
-	/**
-	 * Gets the user's zip code.
-	 * 
-	 * @return
-	 */
-	public String getZipCode() {
-		return _zipCode;
-	}
-
-	/**
-	 * Sets the user's zip code.
-	 * 
-	 * @param zipCode
-	 */
-	public void setZipCode(String zipCode) {
-		this._zipCode = zipCode;
 	}
 
 	public String get_preferredContact() {

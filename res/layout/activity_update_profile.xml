@@ -39,45 +39,6 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/updateProfile_address"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_address"
-        android:inputType="textPostalAddress"
-        android:textColorHint="#200772"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/updateProfile_zipCode"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_zipCode"
-        android:inputType="text"
-        android:textColorHint="#200772"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <RadioGroup
-        android:id="@+id/updateProfile_gender"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <RadioButton
-            android:id="@+id/male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/male" />
-
-        <RadioButton
-            android:id="@+id/female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/female" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/updateProfile_button"
         android:layout_width="fill_parent"
@@ -85,7 +46,6 @@
         android:layout_marginBottom="5dp"
         android:onClick="onUpdateProfile"
         android:text="@string/updateUserButton"
-        android:textAlignment="4"
         android:textSize="14sp"
         android:textStyle="bold" />
 
