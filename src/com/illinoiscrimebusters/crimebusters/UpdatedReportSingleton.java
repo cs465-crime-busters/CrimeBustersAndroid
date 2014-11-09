@@ -26,6 +26,10 @@ public class UpdatedReportSingleton {
 
 	private String audioPathDisplay;
 	private String videoPathDisplay;
+	
+	private HashMap<String, String> report = new HashMap<String, String>();
+	
+	private String pushId;
 
 	/**
 	 * @return audio path string
@@ -117,54 +121,25 @@ public class UpdatedReportSingleton {
 		this.audBos = audBos;
 	}
 
-	private boolean iv1Done = false;
-	private boolean iv2Done = false;
-	private boolean iv3Done = false;
+	private boolean imageValue = false;
+
 
 	/**
 	 * @return if image1set
 	 */
-	public boolean isIv1Done() {
-		return iv1Done;
+	public boolean isImageDone() {
+		return imageValue;
 	}
 
 	/**
 	 * @param iv1Done
 	 *            whether or not 1v1 is set
 	 */
-	public void setIv1Done(boolean iv1Done) {
-		this.iv1Done = iv1Done;
+	public void setImageValueDone(boolean iv1Done) {
+		this.imageValue = iv1Done;
 	}
 
-	/**
-	 * @return is image2set
-	 */
-	public boolean isIv2Done() {
-		return iv2Done;
-	}
 
-	/**
-	 * @param iv2Done
-	 *            whether or not 1v2 is set
-	 */
-	public void setIv2Done(boolean iv2Done) {
-		this.iv2Done = iv2Done;
-	}
-
-	/**
-	 * @return if iv3 is set
-	 */
-	public boolean isIv3Done() {
-		return iv3Done;
-	}
-
-	/**
-	 * @param iv3Done
-	 *            whether or not 1v3 is set
-	 */
-	public void setIv3Done(boolean iv3Done) {
-		this.iv3Done = iv3Done;
-	}
 
 	private String language;
 
@@ -199,7 +174,7 @@ public class UpdatedReportSingleton {
 		this.position = position;
 	}
 
-	private HashMap<String, String> report = new HashMap<String, String>();
+	
 
 	private int themeNumber;
 
@@ -381,21 +356,6 @@ public class UpdatedReportSingleton {
 
 	
 	/**
-	 * @return which button was pressed, 1 or 2
-	 */
-	public String getWhichButton() {
-		return whichButton;
-	}
-
-	/**
-	 * @param sets
-	 *            which button currently called the activity
-	 */
-	public void setWhichButton(String i) {
-		this.whichButton = i;
-	}
-
-	/**
 	 * @return temp description from memory
 	 */
 	public String getTemp_desc() {
@@ -425,6 +385,14 @@ public class UpdatedReportSingleton {
 	 */
 	public void setTemp_location(String temp_location) {
 		this.temp_location = temp_location;
+	}
+
+	public String getPushId() {
+		return pushId;
+	}
+
+	public void setPushId(String pushId) {
+		this.pushId = pushId;
 	}
 
 }

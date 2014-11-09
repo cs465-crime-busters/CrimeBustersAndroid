@@ -89,19 +89,19 @@ LocationListener {
 
 
 
-	/** start add media activity and save already filled strings
-	 *
-	 */
-	public void addMedia(View v) {
-		Intent intent = new Intent(this, MediaActivity.class);
-		startActivity(intent);
-
-		String location = 	 ((EditText) findViewById(R.id.location)).getText().toString();
-
-		String message =  ((EditText) findViewById(R.id.message)).getText().toString();
-		reportSingleton.setTemp_desc(message);
-		reportSingleton.setTemp_location(location);		
-	}
+//	/** start add media activity and save already filled strings
+//	 *
+//	 */
+//	public void addMedia(View v) {
+//		Intent intent = new Intent(this, MediaActivity.class);
+//		startActivity(intent);
+//
+//		String location = 	 ((EditText) findViewById(R.id.location)).getText().toString();
+//
+//		String message =  ((EditText) findViewById(R.id.message)).getText().toString();
+//		reportSingleton.setTemp_desc(message);
+//		reportSingleton.setTemp_location(location);		
+//	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -298,9 +298,7 @@ LocationListener {
 	 */
 	public void submitReport(View view) {
 		populateReport();
-		reportSingleton.setIv1Done(false);
-		reportSingleton.setIv2Done(false);
-		reportSingleton.setIv3Done(false);
+		reportSingleton.setImageValueDone(false);
 
 		Intent intent = new Intent(this, HTTPSubmitReportActivity.class);
 		startActivity(intent);
@@ -373,38 +371,29 @@ LocationListener {
 
 	}
 
-	/**Method to populate the data singleton with user inputted data
+	/**Method to populate the data singleton with user input data
 	 * 
 	 */
 	public void populateReport() {
 
-		reportSingleton.setKey("message",
-				((EditText) findViewById(R.id.message)).getText().toString());
+		// Removed by Ahmed - redundant to description (desc)
+//		reportSingleton.setKey("message",
+//				((EditText) findViewById(R.id.message)).getText().toString());
 
-		String location = "";
-		String gps = "";
-		String latitude = "";
-		String longitude = "";
-		String message = "";
-		String timestamp = "";
-
-		// GET
-
-		location = ((EditText) findViewById(R.id.location)).getText()
-				.toString();
-		timestamp = ((EditText) findViewById(R.id.editText_currentTime_RO))
-				.getText().toString();
-		latitude = ((EditText) findViewById(R.id.locationGPS_lat)).getText()
-				.toString();
-		longitude = ((EditText) findViewById(R.id.locationGPS_long)).getText()
-				.toString();
-		message = ((EditText) findViewById(R.id.message)).getText().toString();
+		String location = ((EditText) findViewById(R.id.location)).getText().toString();
+		String latitude = ((EditText) findViewById(R.id.locationGPS_lat)).getText().toString();
+		String longitude = ((EditText) findViewById(R.id.locationGPS_long)).getText().toString();
+		String message = ((EditText) findViewById(R.id.message)).getText().toString();
+		String timestamp = ((EditText) findViewById(R.id.editText_currentTime_RO)).getText().toString();
 
 		reportSingleton.setKey("location", location);
 		reportSingleton.setKey("desc", message);
 		reportSingleton.setKey("lat", latitude);
 		reportSingleton.setKey("lng", longitude);
 		reportSingleton.setKey("timeStamp", timestamp);
+		
+		// new addition for acknowledgement of the report
+		reportSingleton.setKey("pushId", reportSingleton.getPushId());
 
 	}
 
@@ -563,10 +552,8 @@ LocationListener {
 	 * @param v
 	 */
 	public void takePicture(View v) {
-		Intent intent = new Intent(
-				android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+		Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 		startActivityForResult(intent, 0);
-		reportSingleton.setWhichButton("1");
 	}
 
 	@Override
@@ -602,13 +589,10 @@ LocationListener {
 
 		else if (data != null) {
 			Bitmap photo = (Bitmap) data.getExtras().get("data");
+			SaveImage savefile = new SaveImage();
+			savefile.SavePic(this, photo);
+			reportSingleton.setImageValueDone(true);
 
-			if (reportSingleton.getWhichButton().equals("1")) {
-				//imageView.setImageBitmap(photo);
-				SaveImage savefile = new SaveImage();
-				savefile.SavePic(this, photo);
-				reportSingleton.setIv1Done(true);
-			} 
 		}
 
 	}
@@ -679,9 +663,9 @@ LocationListener {
 		String res = null;
 		String[] proj = { MediaStore.Images.Media.DATA };
 		Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
-		if(cursor.moveToFirst()){;
-		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-		res = cursor.getString(column_index);
+		if(cursor.moveToFirst()){
+			int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			res = cursor.getString(column_index);
 		}
 		cursor.close();
 		return res;

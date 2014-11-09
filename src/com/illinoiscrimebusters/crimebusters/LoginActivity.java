@@ -70,7 +70,6 @@ public class LoginActivity extends Activity {
 		// Creating an instance of Locale for French language
         Locale locale = new Locale(language);
  
-        // Setting locale of the configuration to French language
         config.locale = locale;
  
         // Updating the application configuration

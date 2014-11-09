@@ -26,7 +26,8 @@ import org.apache.http.util.EntityUtils;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
-import com.illinoiscrimebusters.crimebusters.ReportSingleton;
+
+import com.illinoiscrimebusters.crimebusters.UpdatedReportSingleton;
 
 //AsyncTask <TypeOfVarArgParams , ProgressValue , ResultValue> .\\
 /*
@@ -50,8 +51,8 @@ import com.illinoiscrimebusters.crimebusters.ReportSingleton;
 
 public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 
-	private ReportSingleton reportSingleton = ReportSingleton.getInstance();
-	private String responseString = "";
+	private UpdatedReportSingleton reportSingleton = UpdatedReportSingleton.getInstance();
+
 
 	/**
 	 * Gathers data, submits report form, returns http response string
@@ -72,26 +73,16 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 				.create();
 		multipartEntity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 
-		if (reportSingleton.getImage1() != null) {
-			multipartEntity.addPart("photo1", new FileBody(new File(
-					reportSingleton.getImage1())));
-		}
-		if (reportSingleton.getImage2() != null) {
-			multipartEntity.addPart("photo2", new FileBody(new File(
-					reportSingleton.getImage2())));
-		}
-		if (reportSingleton.getImage3() != null) {
-			multipartEntity.addPart("photo3", new FileBody(new File(
-					reportSingleton.getImage3())));
+		if (reportSingleton.getImage() != null) {
+			multipartEntity.addPart("photo", new FileBody(new File(reportSingleton.getImage())));
 		}
 
+
 		if (reportSingleton.getAudioPath() != null) {
-			multipartEntity.addPart("audio", new FileBody(new File(
-					reportSingleton.getAudioPath())));
+			multipartEntity.addPart("audio", new FileBody(new File(reportSingleton.getAudioPath())));
 		}
 		if (reportSingleton.getVideoPath() != null) {
-			multipartEntity.addPart("video", new FileBody(new File(
-					reportSingleton.getVideoPath())));
+			multipartEntity.addPart("video", new FileBody(new File(reportSingleton.getVideoPath())));
 		}
 
 		for (String name : report.keySet()) {
@@ -116,7 +107,7 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 
 		String returnString = "";
 		try {

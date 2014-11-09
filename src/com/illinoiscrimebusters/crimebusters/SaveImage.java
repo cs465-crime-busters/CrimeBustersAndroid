@@ -50,9 +50,7 @@ public class SaveImage {
 		String imageLocation = file_path + NameOfFile + CurrentDateAndTime
 				+ ".jpg";
 
-		// Each image is associated to a specific button
-		String whichButton = UpdatedReportSingleton.getInstance().getWhichButton();
-
+		
 		UpdatedReportSingleton.getInstance().setImage(imageLocation);
 		
 
