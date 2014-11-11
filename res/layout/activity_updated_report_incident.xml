@@ -67,38 +67,6 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/audioPlayButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/submitReport"
-        android:layout_toRightOf="@+id/audioRecordButton"
-        android:background="@drawable/ic_action_play_dark"
-        android:onClick="play"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/submitReport"
-        android:layout_toRightOf="@+id/audioPlayButton"
-        android:background="@drawable/ic_action_stop_dark"
-        android:onClick="stop"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/audioRecordButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/submitReport"
-        android:layout_toRightOf="@+id/pictureCaptureButton"
-        android:background="@drawable/ic_action_mic_dark"
-        android:onClick="startAudioRecording"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <Button
         android:id="@+id/submitReport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -115,7 +83,6 @@
         android:layout_height="50dp"
         android:layout_above="@+id/submitReport"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/button2"
         android:background="@drawable/ic_action_video_dark"
         android:onClick="startRecording"
         android:textSize="18sp"
@@ -159,6 +126,40 @@
         android:text="@string/default_latitude"
         android:textColorHint="#200772"
         android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/audioPlayButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_action_play_dark"
+        android:onClick="play"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/audioRecordButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/submitReport"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/audioPlayButton"
+        android:background="@drawable/ic_action_mic_dark"
+        android:onClick="startAudioRecording"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/message"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/recordVideoButton"
+        android:background="@drawable/ic_action_stop_dark"
+        android:onClick="stop"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
