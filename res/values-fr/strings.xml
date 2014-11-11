@@ -62,9 +62,9 @@
     <string name="hint_firstName">premier nom</string>
     <string name="hint_lastName">dernier nom</string>
     <string name="hint_email">Illinois e-mail adresse</string>
-    <string name="createUserButton">créer usager</string>
+    <string name="createUserButton">soumettre un nouveau compte d\'utilisateur</string>
     <string name="changeThemeButton">changer thème</string>
-    <string name="action_create_account">créer compte</string>
+    <string name="action_create_account">Créer un nouveau compte d\'utilisateur</string>
     <string name="default_email">crime.buster</string>
     <string name="default_password">test123</string>
     <string name="welocme">bjɛ̃vəny vers Crimebusters!</string>

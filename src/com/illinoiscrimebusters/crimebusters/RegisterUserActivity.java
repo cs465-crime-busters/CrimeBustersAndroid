@@ -29,6 +29,7 @@ public class RegisterUserActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setTitle("Create New User Account");
 		setContentView(R.layout.activity_register_user);
 
 		setUserPreferences();

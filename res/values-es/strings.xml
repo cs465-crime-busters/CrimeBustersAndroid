@@ -62,9 +62,9 @@
     <string name="hint_firstName">nombre de pila</string>
     <string name="hint_lastName">apellido</string>
     <string name="hint_email">Illinois dirección de correo electrónico</string>
-    <string name="createUserButton">crear usuario</string>
+    <string name="createUserButton">Enviar nuevas cuentas de usuario</string>
     <string name="changeThemeButton">cambiar el tema</string>
-    <string name="action_create_account">Crear usuario</string>
+    <string name="action_create_account">Crear nueva cuenta de usuario</string>
     <string name="default_email"></string>
     <string name="default_password"></string>
     <string name="welocme">Bienvenido a Crime Busters</string>
