@@ -9,6 +9,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".RegisterUserActivity" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Language:" />
+
     <Spinner
         android:id="@+id/spinnerlanguage"
         android:layout_width="fill_parent"
@@ -17,7 +23,7 @@
         android:textSize="14sp"
         android:textStyle="bold" />  
         
-    <Button
+  <!--   <Button
         android:id="@+id/changeLanguage_button"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -26,14 +32,14 @@
         android:tag="1"
         android:text="@string/changeLanguageButton"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" /> -->
 
     <Switch
         android:id="@+id/switch1"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/report_anonymous" />
+        android:text="@string/report_anonymous"/>
 
     <TextView
         android:id="@+id/titlePreferredContactMethod"
@@ -55,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        
         android:layout_marginTop="80dp"
         android:onClick="onUpdateSettings"
         android:text="@string/button_saveChanges" />

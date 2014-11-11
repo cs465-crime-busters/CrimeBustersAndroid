@@ -23,6 +23,8 @@ public class UpdatedReportSingleton {
 	private String image;
 	private String audioPath;
 	private String videoPath;
+	private String preferredContact; 
+	private Boolean reportAnonymous; 
 
 	private String audioPathDisplay;
 	private String videoPathDisplay;
@@ -393,6 +395,32 @@ public class UpdatedReportSingleton {
 
 	public void setPushId(String pushId) {
 		this.pushId = pushId;
+	}
+
+	public int contactPosition;
+
+	public int getContactPosition() {
+		return contactPosition;
+	}
+
+	public void setContactPosition(int contactPosition) {
+		this.contactPosition = contactPosition;
+	}
+
+	public String getPreferredContact() {
+		return preferredContact;
+	}
+
+	public void setPreferredContact(String preferredContact) {
+		this.preferredContact = preferredContact;
+	}
+
+	public Boolean getReportAnonymous() {
+		return reportAnonymous;
+	}
+
+	public void setReportAnonymous(Boolean reportAnonymous) {
+		this.reportAnonymous = reportAnonymous;
 	}
 
 }
