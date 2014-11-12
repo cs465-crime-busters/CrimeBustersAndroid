@@ -1,12 +1,14 @@
 package com.illinoiscrimebusters.crimebusters;
 
 import java.io.BufferedOutputStream;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.crime.crimebusters.R;
 
-import android.widget.ImageView;
+import android.content.Context;
+import android.content.SharedPreferences;
+//import android.widget.ImageView;
 
 /**
  * @author Ahmed Farouk Soliman
@@ -15,8 +17,6 @@ import android.widget.ImageView;
  */
 public class UpdatedReportSingleton {
 	private String url = "http://illinoiscrimebusters.com/services/PostReport.ashx";
-
-	// private String url ="http://sadkhin.net/crimebusters/test_post.php";
 	private String username = "test";
 	private int reportType = 0;
 	private String imageLocation;
@@ -24,13 +24,10 @@ public class UpdatedReportSingleton {
 	private String videoPath;
 	private String preferredContactMethod = "Phone Call"; 
 	private Boolean reportAnonymous; 
-
 	private String audioPathDisplay;
 	private String videoPathDisplay;
 	
 	private HashMap<String, String> report = new HashMap<String, String>();
-	
-	private String pushId;
 	
 	private boolean includeAudio = false;
 	private boolean includeImage = false;
@@ -73,7 +70,7 @@ public class UpdatedReportSingleton {
 	private String temp_desc;
 	private String temp_location;
 
-	private String whichButton;
+//	private String whichButton;
 
 	/**
 	 * Clear images on submit
@@ -96,7 +93,7 @@ public class UpdatedReportSingleton {
 	}
 
 	private BufferedOutputStream bos;
-	private BufferedOutputStream audBos;
+//	private BufferedOutputStream audBos;
 
 	/**
 	 * @return buffered output for media video
@@ -112,9 +109,9 @@ public class UpdatedReportSingleton {
 	 * @param audBos
 	 *            BufferedOutputStream for audio
 	 */
-	public void setAudBos(BufferedOutputStream audBos) {
-		this.audBos = audBos;
-	}
+//	public void setAudBos(BufferedOutputStream audBos) {
+//		this.audBos = audBos;
+//	}
 
 	private boolean imageValue = false;
 
@@ -382,14 +379,6 @@ public class UpdatedReportSingleton {
 		this.temp_location = temp_location;
 	}
 
-	public String getPushId() {
-		return pushId;
-	}
-
-	public void setPushId(String pushId) {
-		this.pushId = pushId;
-	}
-
 	public int contactPosition;
 
 	public int getContactPosition() {
@@ -409,6 +398,7 @@ public class UpdatedReportSingleton {
 		this.preferredContactMethod = preferredContact;
 	}
 
+	// return true if not null and equals true, false otherwise
 	public Boolean getReportAnonymous() {
 		return null != reportAnonymous && reportAnonymous.booleanValue();
 	}

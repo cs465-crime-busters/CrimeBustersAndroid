@@ -14,7 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
+//import android.graphics.drawable.Drawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -33,7 +33,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,23 +69,23 @@ LocationListener {
 	//private ImageView iv;
 	//private String ivString;
 
-	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200; 
+//	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200; 
 
 	// drawable backgrounds for buttons
 	//private Drawable cameraButtonEnabled ;
-	private Drawable cameraButtonDisabled ;
-
-	private Drawable playButtonEnabled ;
-	private Drawable playButtonDisabled;
-
-	private Drawable stopButtonEnabled;
-	private Drawable stopButtonDisabled ;
-
-	private Drawable recordButtonEnabled;
-	private Drawable recordButtonDisabled ;
-
-	private Drawable videoButtonEnabled ;
-	private Drawable videoButtonDisabled ;
+//	private Drawable cameraButtonDisabled ;
+//
+//	private Drawable playButtonEnabled ;
+//	private Drawable playButtonDisabled;
+//
+//	private Drawable stopButtonEnabled;
+//	private Drawable stopButtonDisabled ;
+//
+//	private Drawable recordButtonEnabled;
+//	private Drawable recordButtonDisabled ;
+//
+//	private Drawable videoButtonEnabled ;
+//	private Drawable videoButtonDisabled ;
 
 
 
@@ -176,9 +176,9 @@ private void initializeMediaPaths() {
 
 		// disable the stop and play Button initially
 		stop.setEnabled(false);
-		stop.setBackgroundDrawable(stopButtonDisabled);
+//		stop.setBackgroundDrawable(stopButtonDisabled);
 		audioPlayButton.setEnabled(false);
-		audioPlayButton.setBackgroundDrawable(playButtonDisabled);
+//		audioPlayButton.setBackgroundDrawable(playButtonDisabled);
 
 
 		outputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/myrecording.3gp";
@@ -198,9 +198,9 @@ private void initializeMediaPaths() {
 
 		if (!hasCamera()) {
 			recBtn.setEnabled(false);
-			recBtn.setBackgroundDrawable(videoButtonDisabled);
+//			recBtn.setBackgroundDrawable(videoButtonDisabled);
 			pic1Btn.setEnabled(false);
-			pic1Btn.setBackgroundDrawable(cameraButtonDisabled);
+//			pic1Btn.setBackgroundDrawable(cameraButtonDisabled);
 		}
 		// <<< Addition for Media
 	}
@@ -208,19 +208,19 @@ private void initializeMediaPaths() {
 
 	private void initializeButtonsStates() {
 		//cameraButtonEnabled = getResources().getDrawable(R.drawable.ic_action_camera);
-		cameraButtonDisabled = getResources().getDrawable(R.drawable.ic_action_camera_dark);
-
-		playButtonEnabled = getResources().getDrawable(R.drawable.ic_action_play);
-		playButtonDisabled = getResources().getDrawable(R.drawable.ic_action_play_dark);
-
-		stopButtonEnabled = getResources().getDrawable(R.drawable.ic_action_stop);
-		stopButtonDisabled = getResources().getDrawable(R.drawable.ic_action_stop_dark);
-
-		recordButtonEnabled = getResources().getDrawable(R.drawable.ic_action_microphone);
-		recordButtonDisabled = getResources().getDrawable(R.drawable.ic_action_mic_dark);
-
-		videoButtonEnabled = getResources().getDrawable(R.drawable.ic_action_video);
-		videoButtonDisabled = getResources().getDrawable(R.drawable.ic_action_video_dark);
+//		cameraButtonDisabled = getResources().getDrawable(R.drawable.ic_action_camera_dark);
+//
+//		playButtonEnabled = getResources().getDrawable(R.drawable.ic_action_play);
+//		playButtonDisabled = getResources().getDrawable(R.drawable.ic_action_play_dark);
+//
+//		stopButtonEnabled = getResources().getDrawable(R.drawable.ic_action_stop);
+//		stopButtonDisabled = getResources().getDrawable(R.drawable.ic_action_stop_dark);
+//
+//		recordButtonEnabled = getResources().getDrawable(R.drawable.ic_action_microphone);
+//		recordButtonDisabled = getResources().getDrawable(R.drawable.ic_action_mic_dark);
+//
+//		videoButtonEnabled = getResources().getDrawable(R.drawable.ic_action_video);
+//		videoButtonDisabled = getResources().getDrawable(R.drawable.ic_action_video_dark);
 	}
 
 
@@ -321,7 +321,7 @@ private void initializeMediaPaths() {
 	 */
 	public void submitReport(View view) {
 		populateReport();
-		reportSingleton.setImageValueDone(false);
+		
 
 		Intent intent = new Intent(this, HTTPSubmitReportActivity.class);
 		startActivity(intent);
@@ -415,9 +415,6 @@ private void initializeMediaPaths() {
 		reportSingleton.setKey("lng", longitude);
 		reportSingleton.setKey("timeStamp", timestamp);
 		
-		// new addition for acknowledgement of the report
-		reportSingleton.setKey("pushId", reportSingleton.getPushId());
-		
 		// contactMethodPref
 		reportSingleton.setKey("contactMethodPref", reportSingleton.getPreferredContactMethod());
 		
@@ -482,10 +479,10 @@ private void initializeMediaPaths() {
 			e.printStackTrace();
 		}
 		audioRecordButton.setEnabled(false);
-		audioRecordButton.setBackgroundDrawable(recordButtonDisabled);
+//		audioRecordButton.setBackgroundDrawable(recordButtonDisabled);
 
 		stop.setEnabled(true);
-		stop.setBackgroundDrawable(stopButtonEnabled);
+//		stop.setBackgroundDrawable(stopButtonEnabled);
 
 		Toast.makeText(getApplicationContext(), "Recording started",
 				Toast.LENGTH_LONG).show();
@@ -503,9 +500,9 @@ private void initializeMediaPaths() {
 		myAudioRecorder.release();
 		myAudioRecorder = null;
 		stop.setEnabled(false);
-		stop.setBackgroundDrawable(stopButtonDisabled);
+//		stop.setBackgroundDrawable(stopButtonDisabled);
 		audioPlayButton.setEnabled(true);
-		stop.setBackgroundDrawable(playButtonEnabled);
+//		stop.setBackgroundDrawable(playButtonEnabled);
 		Toast.makeText(getApplicationContext(), "Audio recorded successfully",
 				Toast.LENGTH_LONG).show();
 	}
@@ -534,7 +531,7 @@ private void initializeMediaPaths() {
 		reportSingleton.setAudioPathDisplay(outputFile);
 
 		audioRecordButton.setEnabled(true);
-		audioRecordButton.setBackgroundDrawable(recordButtonEnabled);
+//		audioRecordButton.setBackgroundDrawable(recordButtonEnabled);
 
 		myAudioRecorder = new MediaRecorder();
 		myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
