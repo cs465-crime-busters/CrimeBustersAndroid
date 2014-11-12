@@ -60,10 +60,11 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 	 * 
 	 * @return returnString , an http response string from the server
 	 */
-	private String submitReport(String pushId) {
+	private String submitReport(String pushId, String contactMethod) {
 		// Get Data
 		HashMap<String, String> report = reportSingleton.copyReport();
 		report.put("pushId", pushId);
+		report.put("contactMethodPref",contactMethod);
 
 		String url = reportSingleton.getUrl();
 
@@ -135,7 +136,7 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 
 	@Override
 	protected String doInBackground(String... args) {
-		return submitReport(args[0]);
+		return submitReport(args[0], args[1]);
 
 	}
 }

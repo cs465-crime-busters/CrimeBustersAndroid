@@ -45,7 +45,8 @@ public class HTTPSubmitReportActivity extends Activity {
 
 		String nameReturn = "";
 		try {
-			nameReturn = h.execute(_preferences.getString("registrationId", "")).get();
+			nameReturn = h.execute(_preferences.getString("registrationId", ""), 
+					_preferences.getString("contactMethodPref", "Email")).get();
 			if (nameReturn.contains("success")) {
 				nameView.setText("Thank you for your report. Your submission has been successfully received" );
 				//maybe show a form with the submitted info, or have it emailed to you

@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class UpdateSettingsActivity extends Activity implements
 	private String _userName;
 	private UpdatedReportSingleton _reportSingleton = UpdatedReportSingleton
 			.getInstance();
+	
+	
 	Spinner spinnerLanguage;
 	EditText selLanguage;
 	Spinner spinnerPreferredContact;
@@ -41,6 +44,8 @@ public class UpdateSettingsActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_update_settings);
+		
+		
 		_userName = getIntent().getStringExtra("userName");
 
 		anonymousSwitch = (Switch) findViewById(R.id.switch1);
@@ -76,7 +81,9 @@ public class UpdateSettingsActivity extends Activity implements
 		
 		setUserPreferences();
 
-		String preContact = _reportSingleton.getPreferredContactMethod();
+		SharedPreferences _preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
+		
+		String preContact = _preferences.getString("contactMethodPref", "");
 		spinnerLanguage = (Spinner) findViewById(R.id.spinnerlanguage);
 
 		spinnerPreferredContact = (Spinner) findViewById(R.id.spinnerPreferredContact);
@@ -105,7 +112,10 @@ public class UpdateSettingsActivity extends Activity implements
 	 * This method is called to set user preferences
 	 */
 	private void setUserPreferences() {
-		String contact = _reportSingleton.getPreferredContactMethod();
+		
+		SharedPreferences _preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
+		String contact = 
+				_preferences.getString("contactMethodPref", "");
 		String lang = _reportSingleton.getLanguage();
 		
 		if (lang != null) {
@@ -149,8 +159,12 @@ public class UpdateSettingsActivity extends Activity implements
 
 		String selLang = (String) spinnerLanguage.getSelectedItem();
 		String selContact = (String) spinnerPreferredContact.getSelectedItem();
-		_reportSingleton.setPreferredContactMethod(selContact);
-
+		
+		SharedPreferences _preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
+		
+		_preferences.edit()
+        	.putString("contactMethodPref", selContact)
+        	.apply();
 		if (selContact == "Phone Call") {
 			_reportSingleton.setContactPosition(0);
 		} else if (selContact == "Text") {
@@ -272,7 +286,11 @@ public class UpdateSettingsActivity extends Activity implements
 		
 		Spinner preferredContact = (Spinner) findViewById(R.id.spinnerPreferredContact);
 		String contact = preferredContact.toString();
-		_reportSingleton.setPreferredContactMethod(contact);
+		
+		SharedPreferences _preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
+		_preferences.edit()
+        	.putString("contactMethodPref", contact)
+        	.apply();
 		_reportSingleton.setReportAnonymous(isAnonymous);
 		languagePreference();
 		String selLang = (String) spinnerLanguage.getSelectedItem();

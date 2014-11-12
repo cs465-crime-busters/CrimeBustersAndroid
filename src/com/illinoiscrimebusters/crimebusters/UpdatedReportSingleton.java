@@ -21,7 +21,7 @@ public class UpdatedReportSingleton {
 	private String imageLocation;
 	private String audioPath;
 	private String videoPath;
-	private String preferredContactMethod = "Phone Call"; 
+	//private String preferredContactMethod = "Phone Call"; 
 	private Boolean reportAnonymous; 
 	private String audioPathDisplay;
 	private String videoPathDisplay;
@@ -388,14 +388,14 @@ public class UpdatedReportSingleton {
 		this.contactPosition = contactPosition;
 	}
 
-	public String getPreferredContactMethod() {
-	
-		return preferredContactMethod;
-	}
-
-	public void setPreferredContactMethod(String preferredContact) {
-		this.preferredContactMethod = preferredContact;
-	}
+//	public String getPreferredContactMethod() {
+//	
+//		return preferredContactMethod;
+//	}
+//
+//	public void setPreferredContactMethod(String preferredContact) {
+//		this.preferredContactMethod = preferredContact;
+//	}
 
 	// return true if not null and equals true, false otherwise
 	public Boolean getReportAnonymous() {

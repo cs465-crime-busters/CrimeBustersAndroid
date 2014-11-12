@@ -415,8 +415,8 @@ private void initializeMediaPaths() {
 		reportSingleton.setKey("lng", longitude);
 		reportSingleton.setKey("timeStamp", timestamp);
 		
-		// contactMethodPref
-		reportSingleton.setKey("contactMethodPref", reportSingleton.getPreferredContactMethod());
+//		// contactMethodPref
+//		reportSingleton.setKey("contactMethodPref", reportSingleton.getPreferredContactMethod());
 		
 		// crimeType
 		reportSingleton.setKey("crimeType", reportSingleton.getCrimeType());
