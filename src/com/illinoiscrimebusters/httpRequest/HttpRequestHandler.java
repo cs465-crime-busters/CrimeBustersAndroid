@@ -59,10 +59,10 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 	 * 
 	 * @return returnString , an http response string from the server
 	 */
-	private String submitReport() {
+	private String submitReport(String pushId) {
 		// Get Data
 		HashMap<String, String> report = reportSingleton.copyReport();
-	
+		report.put("pushId", pushId);
 
 		String url = reportSingleton.getUrl();
 
@@ -84,7 +84,7 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 		}
 		
 		for (String name : report.keySet()) {
-			String value = (null != report.get(name))? report.get(name) : "";
+			String value = (null != report.get(name)) ? report.get(name) : "";
 			multipartEntity.addTextBody(name, value);
 		}
 		
@@ -131,7 +131,7 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 
 	@Override
 	protected String doInBackground(String... args) {
-		return submitReport();
+		return submitReport(args[0]);
 
 	}
 }

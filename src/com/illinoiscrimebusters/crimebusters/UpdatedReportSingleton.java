@@ -6,6 +6,8 @@ import java.util.HashMap;
 
 import com.crime.crimebusters.R;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.ImageView;
 
 /**
@@ -15,8 +17,6 @@ import android.widget.ImageView;
  */
 public class UpdatedReportSingleton {
 	private String url = "http://illinoiscrimebusters.com/services/PostReport.ashx";
-
-	// private String url ="http://sadkhin.net/crimebusters/test_post.php";
 	private String username = "test";
 	private int reportType = 0;
 	private String imageLocation;
@@ -24,7 +24,6 @@ public class UpdatedReportSingleton {
 	private String videoPath;
 	private String preferredContactMethod = "Phone Call"; 
 	private Boolean reportAnonymous; 
-
 	private String audioPathDisplay;
 	private String videoPathDisplay;
 	
