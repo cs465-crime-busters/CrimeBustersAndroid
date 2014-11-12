@@ -20,10 +20,9 @@ public class UpdatedReportSingleton {
 	private String username = "test";
 	private int reportType = 0;
 	private String imageLocation;
-	private String image;
 	private String audioPath;
 	private String videoPath;
-	private String preferredContact; 
+	private String preferredContactMethod = "Phone Call"; 
 	private Boolean reportAnonymous; 
 
 	private String audioPathDisplay;
@@ -32,6 +31,12 @@ public class UpdatedReportSingleton {
 	private HashMap<String, String> report = new HashMap<String, String>();
 	
 	private String pushId;
+	
+	private boolean includeAudio = false;
+	private boolean includeImage = false;
+	private boolean includeVideo = false;
+	
+	private String crimeType;
 
 	/**
 	 * @return audio path string
@@ -75,7 +80,7 @@ public class UpdatedReportSingleton {
 	 * 
 	 */
 	public void clearImages() {
-		image = null;
+		imageLocation = null;
 	}
 
 	/**
@@ -100,20 +105,8 @@ public class UpdatedReportSingleton {
 		return bos;
 	}
 
-	/**
-	 * @param set
-	 *            BufferedOutputStream for video
-	 */
-	public void setBos(BufferedOutputStream bos) {
-		this.bos = bos;
-	}
 
-	/**
-	 * @return buffered output for media audio
-	 */
-	public BufferedOutputStream getAudBos() {
-		return audBos;
-	}
+
 
 	/**
 	 * @param audBos
@@ -345,15 +338,15 @@ public class UpdatedReportSingleton {
 	/**
 	 * @return image1 location from memory
 	 */
-	public String getImage() {
-		return image;
+	public String getImageLocation() {
+		return imageLocation;
 	}
 
 	/**
 	 * @param image1
 	 */
-	public void setImage(String image1) {
-		this.image = image1;
+	public void setImageLocation(String image1) {
+		this.imageLocation = image1;
 	}
 
 	
@@ -407,20 +400,53 @@ public class UpdatedReportSingleton {
 		this.contactPosition = contactPosition;
 	}
 
-	public String getPreferredContact() {
-		return preferredContact;
+	public String getPreferredContactMethod() {
+	
+		return preferredContactMethod;
 	}
 
-	public void setPreferredContact(String preferredContact) {
-		this.preferredContact = preferredContact;
+	public void setPreferredContactMethod(String preferredContact) {
+		this.preferredContactMethod = preferredContact;
 	}
 
 	public Boolean getReportAnonymous() {
-		return reportAnonymous;
+		return null != reportAnonymous && reportAnonymous.booleanValue();
 	}
 
 	public void setReportAnonymous(Boolean reportAnonymous) {
 		this.reportAnonymous = reportAnonymous;
+	}
+
+	public boolean isIncludeAudio() {
+		return includeAudio;
+	}
+
+	public void setIncludeAudio(boolean includeAudio) {
+		this.includeAudio = includeAudio;
+	}
+
+	public boolean isIncludeImage() {
+		return includeImage;
+	}
+
+	public void setIncludeImage(boolean includeImage) {
+		this.includeImage = includeImage;
+	}
+
+	public boolean isIncludeVideo() {
+		return includeVideo;
+	}
+
+	public void setIncludeVideo(boolean includeVideo) {
+		this.includeVideo = includeVideo;
+	}
+
+	public String getCrimeType() {
+		return crimeType;
+	}
+
+	public void setCrimeType(String crimeType) {
+		this.crimeType = crimeType;
 	}
 
 }

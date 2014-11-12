@@ -76,7 +76,7 @@ public class UpdateSettingsActivity extends Activity implements
 		
 		setUserPreferences();
 
-		String preContact = _reportSingleton.getPreferredContact();
+		String preContact = _reportSingleton.getPreferredContactMethod();
 		spinnerLanguage = (Spinner) findViewById(R.id.spinnerlanguage);
 
 		spinnerPreferredContact = (Spinner) findViewById(R.id.spinnerPreferredContact);
@@ -105,7 +105,7 @@ public class UpdateSettingsActivity extends Activity implements
 	 * This method is called to set user preferences
 	 */
 	private void setUserPreferences() {
-		String contact = _reportSingleton.getPreferredContact();
+		String contact = _reportSingleton.getPreferredContactMethod();
 		String lang = _reportSingleton.getLanguage();
 		
 		if (lang != null) {
@@ -149,7 +149,7 @@ public class UpdateSettingsActivity extends Activity implements
 
 		String selLang = (String) spinnerLanguage.getSelectedItem();
 		String selContact = (String) spinnerPreferredContact.getSelectedItem();
-		_reportSingleton.setPreferredContact(selContact);
+		_reportSingleton.setPreferredContactMethod(selContact);
 
 		if (selContact == "Phone Call") {
 			_reportSingleton.setContactPosition(0);
@@ -272,7 +272,7 @@ public class UpdateSettingsActivity extends Activity implements
 		
 		Spinner preferredContact = (Spinner) findViewById(R.id.spinnerPreferredContact);
 		String contact = preferredContact.toString();
-		_reportSingleton.setPreferredContact(contact);
+		_reportSingleton.setPreferredContactMethod(contact);
 		_reportSingleton.setReportAnonymous(isAnonymous);
 		languagePreference();
 		String selLang = (String) spinnerLanguage.getSelectedItem();

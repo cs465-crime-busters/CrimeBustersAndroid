@@ -51,7 +51,7 @@ public class SaveImage {
 				+ ".jpg";
 
 		
-		UpdatedReportSingleton.getInstance().setImage(imageLocation);
+		UpdatedReportSingleton.getInstance().setImageLocation(imageLocation);
 		
 
 		// We will use jpeg for our images

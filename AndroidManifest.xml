@@ -69,20 +69,8 @@
             android:label="@string/title_activity_httpsubmit_report"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name="com.illinoiscrimebusters.crimebusters.MainActivity"
-            android:label="@string/title_activity_main"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.illinoiscrimebusters.crimebusters.HighPriorityIncidentActivity"
-            android:label="@string/title_activity_high_priority_incident"
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.crime.crimebusters.MainFormActivity" />
-        </activity>
+
+
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdateProfileActivity"
             android:label="@string/title_activity_update_profile"
@@ -110,15 +98,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crime.crimebusters.LoginActivity" />
         </activity>
-        <activity
-            android:name="com.illinoiscrimebusters.crimebusters.MediaActivity"
-            android:label="@string/title_activity_media"
-            android:parentActivityName="com.illinoiscrimebusters.crimebusters.ReportIncidentActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.illinoiscrimebusters.crimebusters" />
-        </activity>
+
         <receiver
                 android:name="com.illinoiscrimebusters.push.GcmBroadcastReceiver"
                 android:permission="com.google.android.c2dm.permission.SEND" >

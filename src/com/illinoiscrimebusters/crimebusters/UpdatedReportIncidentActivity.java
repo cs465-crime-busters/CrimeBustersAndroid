@@ -29,6 +29,7 @@ import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,7 +68,7 @@ LocationListener {
 	private String provider;
 	//private ImageView iv;
 	//private String ivString;
-	private Uri fileUri; 
+
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200; 
 
 	// drawable backgrounds for buttons
@@ -124,14 +125,25 @@ LocationListener {
 			initializeButtonsStates();
 			initializeButtons();
 			initializeSpinner();
+			
+			initializeMediaPaths();
 		}
 
 		initializeGPS();
 		initializeTime();
-
-
-		//Log.v(ACTIVITY_SERVICE, "Time as on form "+((EditText) findViewById(R.id.editText_currentTime_RO)).getText().toString());
 	}
+
+private void initializeMediaPaths() {
+	String cbFolder = "/CB_Folder/" ;
+	reportSingleton.setImageLocation(null); // will be set later in SaveImage class
+	reportSingleton.setIncludeImage(false);
+	
+	reportSingleton.setAudioPath( Environment.getExternalStorageDirectory().getAbsolutePath() + cbFolder + "cb_audio.3gp");
+	reportSingleton.setIncludeAudio(false);
+	
+	reportSingleton.setVideoPath(Environment.getExternalStorageDirectory().getAbsolutePath()+ cbFolder + "cb_vid.mp4");
+	reportSingleton.setIncludeVideo(false);
+}
 	
 	private void initializeSpinner() {
 		Spinner spinner = (Spinner) findViewById(R.id.crimteTypespinner);
@@ -142,6 +154,17 @@ LocationListener {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
+		
+		spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+				reportSingleton.setCrimeType(parent.getItemAtPosition(pos).toString());
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+			}
+		});
 	}
 
 	private void initializeButtons() {
@@ -267,7 +290,7 @@ LocationListener {
 	 *  Define the criteria how to select the location provider -> use default
 	 *  Initialize the location fields
 	 */
-	public void initializeGPS() {
+	private void initializeGPS() {
 		latituteField = (TextView) findViewById(R.id.locationGPS_lat);
 		longitudeField = (TextView) findViewById(R.id.locationGPS_long);
 
@@ -394,6 +417,24 @@ LocationListener {
 		
 		// new addition for acknowledgement of the report
 		reportSingleton.setKey("pushId", reportSingleton.getPushId());
+		
+		// contactMethodPref
+		reportSingleton.setKey("contactMethodPref", reportSingleton.getPreferredContactMethod());
+		
+		// crimeType
+		reportSingleton.setKey("crimeType", reportSingleton.getCrimeType());
+		
+		
+		// report type id
+		reportSingleton.setKey("reportTypeId", String.valueOf(reportSingleton.getReportType()));
+		
+		
+		// username
+		String username = "anonymous";
+		if(reportSingleton.getName() != null && !reportSingleton.getReportAnonymous())
+			username = reportSingleton.getName();
+		reportSingleton.setKey("userName", username);
+		
 
 	}
 
@@ -510,10 +551,7 @@ LocationListener {
 	 */
 	private String saveAudio(File outputFile) {
 		String sourceFilename = outputFile.getPath();
-		String destinationFilename = android.os.Environment
-				.getExternalStorageDirectory().getPath()
-				+ File.separatorChar
-				+ "cb_audio.3gp";
+
 
 		BufferedInputStream bis = null;
 		BufferedOutputStream audBos = null;
@@ -521,13 +559,13 @@ LocationListener {
 		try {
 			bis = new BufferedInputStream(new FileInputStream(sourceFilename));
 			audBos = new BufferedOutputStream(new FileOutputStream(
-					destinationFilename, false));
+					reportSingleton.getAudioPath(), false));
 			byte[] buf = new byte[1024];
 			bis.read(buf);
 			do {
 				audBos.write(buf);
 			} while (bis.read(buf) != -1);
-			reportSingleton.setAudBos(audBos);
+			reportSingleton.setIncludeAudio(true);
 		} catch (IOException e) {
 
 		} finally {
@@ -541,8 +579,7 @@ LocationListener {
 			}
 		}
 
-		reportSingleton.setAudioPath(destinationFilename);
-		return destinationFilename;
+		return reportSingleton.getAudioPath();
 	}
 
 
@@ -574,10 +611,8 @@ LocationListener {
 
 				reportSingleton.setVideoPath(getPath(videoUri));
 				reportSingleton.setVideoPathDisplay(path);
-
-				//textView3 = (TextView) findViewById(R.id.textView3);
-				//textView3.setText(path);
-
+				reportSingleton.setIncludeVideo(true);
+				
 			} else if (resultCode == RESULT_CANCELED) {
 				Toast.makeText(this, "Video recording cancelled.",
 						Toast.LENGTH_LONG).show();
@@ -591,7 +626,7 @@ LocationListener {
 			Bitmap photo = (Bitmap) data.getExtras().get("data");
 			SaveImage savefile = new SaveImage();
 			savefile.SavePic(this, photo);
-			reportSingleton.setImageValueDone(true);
+			reportSingleton.setIncludeImage(true);
 
 		}
 
@@ -609,15 +644,10 @@ LocationListener {
 	 */
 	private String saveVideo(Uri uri) {
 		String sourceFilename = uri.getPath();
-		String destinationFilename = android.os.Environment
-				.getExternalStorageDirectory().getPath()
-				+ File.separatorChar
-				+ "cb_vid.mp4";
-
+		String destinationFilename = android.os.Environment.getExternalStorageDirectory().getPath() + File.separatorChar + "cb_vid.mp4";
+		
 		String NameOfFolder = "/CB_Folder/";
-		String file_path = Environment.getExternalStorageDirectory().getAbsolutePath()+NameOfFolder + "cb_vid.mp4";
-
-		destinationFilename = file_path;
+		destinationFilename = Environment.getExternalStorageDirectory().getAbsolutePath()+NameOfFolder + "cb_vid.mp4";
 
 		BufferedInputStream bis = null;
 		BufferedOutputStream bos = null;
@@ -631,7 +661,7 @@ LocationListener {
 			do {
 				bos.write(buf);
 			} while (bis.read(buf) != -1);
-			reportSingleton.setBos(bos);
+			reportSingleton.setIncludeVideo(true);
 		} catch (IOException e) {
 
 		} finally {

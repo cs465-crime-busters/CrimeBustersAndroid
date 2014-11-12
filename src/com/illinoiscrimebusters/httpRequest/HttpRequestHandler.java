@@ -62,36 +62,32 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 	private String submitReport() {
 		// Get Data
 		HashMap<String, String> report = reportSingleton.copyReport();
-		// Get Report type
-		int reportType = reportSingleton.getReportType();
-		String username = reportSingleton.getName();
-		// username = "crime.buster";
-		String reportTypeString = String.valueOf(reportType);
+	
+
 		String url = reportSingleton.getUrl();
 
 		MultipartEntityBuilder multipartEntity = MultipartEntityBuilder
 				.create();
 		multipartEntity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 
-		if (reportSingleton.getImage() != null) {
-			multipartEntity.addPart("photo", new FileBody(new File(reportSingleton.getImage())));
+		if (reportSingleton.isIncludeImage() &&  reportSingleton.getImageLocation() != null) {
+			multipartEntity.addPart("photo", new FileBody(new File(reportSingleton.getImageLocation())));
 		}
 
 
-		if (reportSingleton.getAudioPath() != null) {
+		if (reportSingleton.isIncludeAudio() && reportSingleton.getAudioPath() != null) {
 			multipartEntity.addPart("audio", new FileBody(new File(reportSingleton.getAudioPath())));
 		}
-		if (reportSingleton.getVideoPath() != null) {
+		
+		if (reportSingleton.isIncludeVideo() && reportSingleton.getVideoPath() != null) {
 			multipartEntity.addPart("video", new FileBody(new File(reportSingleton.getVideoPath())));
 		}
-
+		
 		for (String name : report.keySet()) {
-
-			multipartEntity.addTextBody(name, report.get(name));
+			String value = (null != report.get(name))? report.get(name) : "";
+			multipartEntity.addTextBody(name, value);
 		}
-
-		multipartEntity.addTextBody("reportTypeId", reportTypeString);
-		multipartEntity.addTextBody("userName", username);
+		
 
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpPost post = new HttpPost(url);

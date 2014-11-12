@@ -3,13 +3,13 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.crime.crimebusters.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="com.illinoiscrimebusters.crimebusters.SettingsActivity$GeneralPreferenceFragment"
         android:title="@string/pref_header_general" />
     <header
-        android:fragment="com.crime.crimebusters.SettingsActivity$NotificationPreferenceFragment"
+        android:fragment="com.illinoiscrimebusters.crimebusters.SettingsActivity$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
     <header
-        android:fragment="com.crime.crimebusters.SettingsActivity$DataSyncPreferenceFragment"
+        android:fragment="com.illinoiscrimebusters.crimebusters.SettingsActivity$DataSyncPreferenceFragment"
         android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

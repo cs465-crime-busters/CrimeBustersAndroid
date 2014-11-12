@@ -26,7 +26,6 @@
         android:layout_alignRight="@+id/main_activity_header"
         android:layout_below="@+id/report_emergency"
         android:layout_marginTop="20dp"
-        android:layout_weight="1"
         android:background="@drawable/yellow_button"
         android:height="150dp"
         android:onClick="report"
