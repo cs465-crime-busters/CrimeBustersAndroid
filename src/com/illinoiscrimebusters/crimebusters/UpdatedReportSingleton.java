@@ -29,8 +29,6 @@ public class UpdatedReportSingleton {
 	
 	private HashMap<String, String> report = new HashMap<String, String>();
 	
-	private String pushId;
-	
 	private boolean includeAudio = false;
 	private boolean includeImage = false;
 	private boolean includeVideo = false;
@@ -379,14 +377,6 @@ public class UpdatedReportSingleton {
 	 */
 	public void setTemp_location(String temp_location) {
 		this.temp_location = temp_location;
-	}
-
-	public String getPushId() {
-		return pushId;
-	}
-
-	public void setPushId(String pushId) {
-		this.pushId = pushId;
 	}
 
 	public int contactPosition;

@@ -331,9 +331,6 @@ public class MainFormActivity extends Activity {
             .putString("registrationId", _registrationId)
             .putInt("appVersion", appVersion)
             .apply();
-        
-        // store the push ID in the report Singleton as well
-        _reportSingleton.setPushId(_registrationId);
     }
 	
     /**

@@ -415,9 +415,6 @@ private void initializeMediaPaths() {
 		reportSingleton.setKey("lng", longitude);
 		reportSingleton.setKey("timeStamp", timestamp);
 		
-		// new addition for acknowledgement of the report
-		reportSingleton.setKey("pushId", reportSingleton.getPushId());
-		
 		// contactMethodPref
 		reportSingleton.setKey("contactMethodPref", reportSingleton.getPreferredContactMethod());
 		
