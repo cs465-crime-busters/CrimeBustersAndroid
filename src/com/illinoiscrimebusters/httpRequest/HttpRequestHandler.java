@@ -85,7 +85,7 @@ public class HttpRequestHandler extends AsyncTask<String, Void, String> {
 		}
 		
 		for (String name : report.keySet()) {
-			
+
 			String value = (null != report.get(name)) ? report.get(name) : "";
 			multipartEntity.addTextBody(name, value);
 		}

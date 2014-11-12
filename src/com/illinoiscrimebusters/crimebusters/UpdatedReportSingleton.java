@@ -8,7 +8,6 @@ import com.crime.crimebusters.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-//import android.widget.ImageView;
 
 /**
  * @author Ahmed Farouk Soliman

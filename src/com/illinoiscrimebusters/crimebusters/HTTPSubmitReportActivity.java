@@ -9,6 +9,7 @@ import com.illinoiscrimebusters.httpRequest.HttpRequestHandler;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,11 +23,13 @@ import android.widget.TextView;
 	 
 public class HTTPSubmitReportActivity extends Activity {
 	UpdatedReportSingleton reportSingleton = UpdatedReportSingleton.getInstance();
-
+	private SharedPreferences _preferences;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		_preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
+		
 		setUserPreferences();
 		
 		setContentView(R.layout.activity_submit_report);
@@ -42,7 +45,7 @@ public class HTTPSubmitReportActivity extends Activity {
 
 		String nameReturn = "";
 		try {
-			nameReturn = h.execute("").get();
+			nameReturn = h.execute(_preferences.getString("registrationId", "")).get();
 			if (nameReturn.contains("success")) {
 				nameView.setText("Thank you for your report. Your submission has been successfully received" );
 				//maybe show a form with the submitted info, or have it emailed to you
