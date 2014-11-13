@@ -28,6 +28,7 @@ public class HTTPSubmitReportActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setTitle("Submit Report Confirmation");
 		_preferences = getSharedPreferences("cbPreference", MODE_PRIVATE);
 		
 		setUserPreferences();
@@ -71,7 +72,7 @@ public class HTTPSubmitReportActivity extends Activity {
 	 */
 	private void setUserPreferences() {
 		int theme = reportSingleton.setTheme();
-		getWindow().setBackgroundDrawableResource(theme);
+		getWindow().setBackgroundDrawableResource(R.drawable.black);
 
 		String lang = reportSingleton.getLanguage();
 		if (lang!=null)

@@ -14,14 +14,16 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <permission android:name="com.illinoiscrimebusters.crimebusters.permission.C2D_MESSAGE"
-                android:protectionLevel="signature" />
-	<uses-permission android:name="com.illinoiscrimebusters.crimebusters.permission.C2D_MESSAGE" />
-	
+
+    <permission
+        android:name="com.illinoiscrimebusters.crimebusters.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.illinoiscrimebusters.crimebusters.permission.C2D_MESSAGE" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -67,10 +69,12 @@
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.HTTPSubmitReportActivity"
             android:label="@string/title_activity_httpsubmit_report"
+            android:parentActivityName="com.illinoiscrimebusters.crimebusters.MainFormActivity"
             android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crime.crimebusters.MainFormActivity" />
         </activity>
-
-
         <activity
             android:name="com.illinoiscrimebusters.crimebusters.UpdateProfileActivity"
             android:label="@string/title_activity_update_profile"
@@ -100,17 +104,20 @@
         </activity>
 
         <receiver
-                android:name="com.illinoiscrimebusters.push.GcmBroadcastReceiver"
-                android:permission="com.google.android.c2dm.permission.SEND" >
+            android:name="com.illinoiscrimebusters.push.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="com.illinoiscrimebusters.crimebusters" />
             </intent-filter>
         </receiver>
+
         <service android:name="com.illinoiscrimebusters.push.GcmIntentService" />
-        
-        <meta-data android:name="com.google.android.gms.version"
-        	android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
