@@ -19,7 +19,7 @@
     <string name="gpsButton">gpsbouton</string>
     <string name="title_activity_httpsubmit_report">apprendre à soumission statut</string>
     <string name="location_gps">courant GPS/triangulation position</string>
-    <string name="location_human"> localité, exemple capote étage</string>
+    <string name="location_human">Description du site</string>
     <string name="submitReportButton">soumettre apprendre à</string>
     <string name="title_activity_main">principal carte</string>
     <string name="welcome">bjɛ̃vəny </string>

@@ -30,6 +30,7 @@ public class UpdateProfileActivity extends Activity implements
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 
 		getActionBar().setTitle("Edit Profile");
 		

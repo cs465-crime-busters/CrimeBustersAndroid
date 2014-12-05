@@ -19,7 +19,7 @@
     <string name="gpsButton">botóngps</string>
     <string name="title_activity_httpsubmit_report">Informedeestadodepresentación</string>
     <string name="location_gps">GPS/Triangulación actual Posición</string>
-    <string name="location_human">Ubicación, por ejemplo, en planta alta</string>
+    <string name="location_human">Descripción del Sitio</string>
     <string name="submitReportButton">presentar un informe</string>
     <string name="title_activity_main">menúPrincipal</string>
     <string name="welcome">bienvenido</string>

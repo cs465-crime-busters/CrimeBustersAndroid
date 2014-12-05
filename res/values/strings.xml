@@ -19,7 +19,7 @@
     <string name="gpsButton">gpsButton</string>
     <string name="title_activity_httpsubmit_report">Report Submission Status</string>
     <string name="location_gps">Current GPS / Triangulation Position</string>
-    <string name="location_human">Location, eg Top Floor</string>
+    <string name="location_human">Site Description</string>
     <string name="submitReportButton">Submit Report</string>
     <string name="title_activity_main">Main Menu</string>
     <string name="welcome">Welcome </string>
